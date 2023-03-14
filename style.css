@@ -1,1 +1,16 @@
+/* General settings */
+:root { 
+    font-size: 62.5%;
+    --main-color: #D44040;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
