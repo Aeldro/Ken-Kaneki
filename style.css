@@ -5,6 +5,8 @@
     --second-color: #6d0506;
     --main-dark: #202020;
     --second-dark: #3f3f3f;
+    --main-light: #D4D4D4;
+    /* Mettre white en guise de second light */
 }
 
 * {
