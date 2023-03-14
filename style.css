@@ -1,7 +1,10 @@
 /* General settings */
 :root { 
     font-size: 62.5%;
-    --main-color: #D44040;
+    --main-color: #016990;
+    --second-color: #6d0506;
+    --main-dark: #202020;
+    --second-dark: #3f3f3f;
 }
 
 * {
