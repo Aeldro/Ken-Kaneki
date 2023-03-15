@@ -5,12 +5,12 @@
     --second-color: #6d0506;
     --main-dark: #202020;
     --second-dark: #3f3f3f;
-    --main-light: #D4D4D4;
+    --main-light: #e9e9e9;
     /* Mettre white en guise de second light */
 }
 
 * {
-    font-family: "NanumGothic", sans-serif;
+    font-family: 'PT Serif', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -213,7 +213,46 @@ li.hide-carousel-img {
 }
 
 /* Section */
+.container-sections {
+    
+    width: 90%;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.individual-section {
+    background: rgb(82,201,246);
+background: linear-gradient(180deg, rgba(82,201,246,1) 0%, rgba(241,241,241,1) 100%);
+    box-shadow: #202020 0 0 0.5rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.individual-section img {
+    float: left;
+    width: 40%;
+    margin: 0.5rem;
+    margin-right: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: #202020 0 0 0.5rem;
+}
+
+.individual-section h3 {
+    
+   font-size: 2.2rem; 
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    letter-spacing: 0.3rem;
+   padding: 1rem;
+   text-align: center;
+}
+
+.individual-section p {
+    font-size: 1.8rem;
+    
+   margin: 1.5rem;
+    line-height: 2.5rem;
+}
 
 
 /* Footer */
