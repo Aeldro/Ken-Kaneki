@@ -1,10 +1,16 @@
 /* General settings */
-:root { 
+:root {
     font-size: 62.5%;
-    --main-color: #D44040;
+    --main-color: #016990;
+    --second-color: #6d0506;
+    --main-dark: #202020;
+    --second-dark: #3f3f3f;
+    --main-light: #D4D4D4;
+    /* Mettre white en guise de second light */
 }
 
 * {
+    font-family: "NanumGothic", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -16,8 +22,28 @@ body {
 }
 
 
-header{
+/* Navigation */
 
+
+
+/* Header */
+
+
+
+/* Main */
+
+main {
+    width: 70vw;
 }
 
 
+
+/* Carousel */
+
+
+
+/* Section */
+
+
+
+/* Footer */
