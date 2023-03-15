@@ -10,7 +10,7 @@
 }
 
 * {
-    font-family: "NanumGothic", sans-serif;
+    font-family: 'PT Serif', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -84,6 +84,7 @@ background: linear-gradient(180deg, rgba(82,201,246,1) 0%, rgba(241,241,241,1) 1
 
 .individual-section p {
     font-size: 1.8rem;
+    
    margin: 1.5rem;
     line-height: 2.5rem;
 }
