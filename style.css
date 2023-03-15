@@ -19,6 +19,7 @@
 body {
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 
@@ -159,14 +160,57 @@ header h1 {
 /* Main */
 
 main {
-    width: 90vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 
 
 /* Carousel */
 
+.carousel-container {
+    width: 90%;
+    height: 20vh;
+    display: flex;
+    background-color: var(--main-light);
+    box-shadow: 0 0 1rem black;
+}
 
+.carousel-img-container {
+    width: 80%;
+    height: 100%;
+    list-style: none;
+}
+
+.carousel-img-container li {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.carousel-img-container img {
+    max-height: 100%;
+}
+
+.arrow-button {
+    width: 10%;
+    height: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+li.hide-carousel-img {
+    display: none;
+}
 
 /* Section */
 
