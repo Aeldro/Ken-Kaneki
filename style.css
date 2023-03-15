@@ -148,7 +148,8 @@ header h1 {
     font-size: 3rem;
     display: flex;
     justify-content: center;
-    padding-top: 6.5rem;
+    align-items: center;
+    height: 100%;
 
 
     text-shadow: 2px 2px 2px black;
