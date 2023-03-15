@@ -227,7 +227,7 @@ li.hide-carousel-img {
     background: rgb(1,105,144);
 /* background: linear-gradient(0deg, rgba(1,105,144,1) 0%, rgba(3,39,52,1) 100%); */
     box-shadow: #202020 0 0 0.5rem;
-    margin: 2rem;
+    margin: 2rem 1rem 2rem 1rem;
     border-radius: 1rem;
 }
 
