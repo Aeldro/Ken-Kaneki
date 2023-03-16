@@ -49,6 +49,18 @@ function leftArrowClick() {
   }
 }
 
+function darkCarousel() {
+  for(let i = 0; i < lisCarousel.length; i++) {
+    lisCarousel[i].firstChild.src = `./assets/caroudark${i+1}.jpg`
+  }
+}
+
+function lightCarousel() {
+  for(let i = 0; i < lisCarousel.length; i++) {
+    lisCarousel[i].firstChild.src = `./assets/carousel${i+1}.jpg`
+  }
+}
+
 rightArrow.addEventListener("click", rightArrowClick)
 leftArrow.addEventListener("click", leftArrowClick)
 carouselImgContainer.addEventListener("click", (e) => {
