@@ -162,6 +162,7 @@ header h1 {
 /* Main */
 
 main {
+    background-color: #deecf1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -224,10 +225,11 @@ li.hide-carousel-img {
 }
 
 .individual-section {
-    background: rgb(82,201,246);
-background: linear-gradient(180deg, rgba(82,201,246,1) 0%, rgba(241,241,241,1) 100%);
+    color: white;
+    background: rgb(1,105,144);
+/* background: linear-gradient(0deg, rgba(1,105,144,1) 0%, rgba(3,39,52,1) 100%); */
     box-shadow: #202020 0 0 0.5rem;
-    margin-bottom: 3rem;
+    margin: 2rem 1rem 2rem 1rem;
     border-radius: 1rem;
 }
 
@@ -243,7 +245,7 @@ background: linear-gradient(180deg, rgba(82,201,246,1) 0%, rgba(241,241,241,1) 1
 .individual-section h3 {
     
    font-size: 2.2rem; 
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+   text-shadow: 0 0 1rem black;
     letter-spacing: 0.3rem;
    padding: 1rem;
    text-align: center;
@@ -251,6 +253,7 @@ background: linear-gradient(180deg, rgba(82,201,246,1) 0%, rgba(241,241,241,1) 1
 
 .individual-section p {
     font-size: 1.8rem;
+    text-shadow: 0 0 0.5rem black;
     
    margin: 1.5rem;
     line-height: 2.5rem;
