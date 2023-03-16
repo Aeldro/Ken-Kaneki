@@ -115,6 +115,7 @@ nav {
     transform: translateY(-100%); /* position de depart ( -100% à gauche, +100% à droite
                                     transalateY: ( -100% en haut, +100% en bas */
     transition: transform 0.6s ease-in-out;
+    z-index: 1;
 }
 
 .rideau.active{
@@ -180,20 +181,29 @@ main {
     display: flex;
     background-color: var(--main-light);
     box-shadow: 0 0 1rem black;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
 }
 
 .carousel-img-container {
     width: 80%;
     height: 100%;
     list-style: none;
+    position: relative;
 }
 
 .carousel-img-container li {
     height: 100%;
     width: 80%;
-    display: flex;
+    display: none;
     justify-content: center;
     margin: auto;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.5s ease;
 }
 
 .carousel-img-container img {
@@ -209,10 +219,16 @@ main {
     align-items: center;
     color: white;
     font-size: 2rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
 }
 
-li.hide-carousel-img {
-    display: none;
+.left-arrow {
+    opacity: 0.5;
+}
+
+li.show-carousel-img {
+    opacity: 1;
 }
 
 /* Section */
