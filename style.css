@@ -5,12 +5,12 @@
     --second-color: #6d0506;
     --main-dark: #202020;
     --second-dark: #3f3f3f;
-    --main-light: #D4D4D4;
+    --main-light: #e9e9e9;
     /* Mettre white en guise de second light */
 }
 
 * {
-    font-family: "NanumGothic", sans-serif;
+    font-family: 'PT Serif', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -162,6 +162,7 @@ header h1 {
 /* Main */
 
 main {
+    background-color: #deecf1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -230,7 +231,48 @@ li.show-carousel-img {
 }
 
 /* Section */
+.container-sections {
+    
+    width: 90%;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.individual-section {
+    color: white;
+    background: rgb(1,105,144);
+/* background: linear-gradient(0deg, rgba(1,105,144,1) 0%, rgba(3,39,52,1) 100%); */
+    box-shadow: #202020 0 0 0.5rem;
+    margin: 2rem 1rem 2rem 1rem;
+    border-radius: 1rem;
+}
+
+.individual-section img {
+    float: left;
+    width: 40%;
+    margin: 0.5rem;
+    margin-right: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: #202020 0 0 0.5rem;
+}
+
+.individual-section h3 {
+    
+   font-size: 2.2rem; 
+   text-shadow: 0 0 1rem black;
+    letter-spacing: 0.3rem;
+   padding: 1rem;
+   text-align: center;
+}
+
+.individual-section p {
+    font-size: 1.8rem;
+    text-shadow: 0 0 0.5rem black;
+    
+   margin: 1.5rem;
+    line-height: 2.5rem;
+}
 
 
 /* Footer */
