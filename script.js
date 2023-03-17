@@ -73,3 +73,29 @@ carouselImgContainer.addEventListener("click", (e) => {
     rightArrowClick()
   }
 })
+
+// dark mode
+const main = document.querySelector('main');
+const nav = document.querySelector('nav');
+const footer = document.querySelector('footer');
+const section = document.querySelectorAll('.individual-section');
+const darkMode = document.querySelector('.darkmode');
+const logo = document.querySelector('.image');
+
+darkMode.addEventListener('click', function() {
+ 
+  main.style.backgroundColor = "#202020";
+  nav.style.backgroundColor = "#6d0506";
+  footer.style.backgroundColor = "#6d0506";
+  for (let i = 0; i < section.length; i++) {
+    section[i].style.backgroundColor = "#6d0506";
+    
+  }
+  logo.src = "./assets/logo-dark1-nuit.png";
+  
+});
+  
+
+
+
+
