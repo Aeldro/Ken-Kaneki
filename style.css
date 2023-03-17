@@ -326,7 +326,7 @@ section .evolution {
 .slide img {
     height: 35vh;
     width: 22vh;
-    border: 5px solid#2762ec;
+    border: 5px solid var(--main-color);
 }
 
 .slider {
