@@ -29,7 +29,7 @@ body {
 nav {
     position: fixed;
     background-color: var(--main-color);
-    height: 10rem;
+    height: 15vh;
     width: 100vw;
     z-index: 1;
 
