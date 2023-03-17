@@ -159,7 +159,7 @@ nav {
     font-size: 1.8rem;
     
     display: block;
-    color: var(--second-light);
+    color: white;
     text-decoration: none;
     padding: 0.4rem;
     margin: 0.2rem;
@@ -370,7 +370,7 @@ footer {
 }
 
 /* MEDIA QUERY */
-@media screen and (min-width: 375px){
+/* @media screen and (min-width: 375px){ 
     .line, .nav-toggler, .nav-toggler, .active, .nav-toggler:hover{
         display: none;
     }
@@ -396,7 +396,7 @@ footer {
         width: 70vw;
         min-height: 10vh;
         margin: auto;
-        /* background: var(--main-color-fond-menu); */
+        /* background: var(--main-color-fond-menu); 
         transform: translateY(0);
     }
     .rideau a:hover{
@@ -427,4 +427,4 @@ footer {
         border: none;
         transition: 0.3s;
     }  
-}
+} */
