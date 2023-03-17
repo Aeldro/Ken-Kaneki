@@ -5,7 +5,6 @@
     --second-light: #016990;
     --second-dark: #6d0506;
     --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
-
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -304,11 +303,9 @@ li.show-carousel-img {
 /*EVOLUTION*/
 
 .card h2 {
-    color: var(--main-color);
-
+    color: var(--second-light);
     border-radius: 1rem;
     font-size: 2.1rem;
-
     letter-spacing: 0.2rem;
     margin-top: 5rem;
 }
@@ -323,7 +320,7 @@ section .evolution {
 .slide img {
     height: 35vh;
     width: 22vh;
-    border: 5px solid#2762ec;
+    /* border: 0.3rem solid var(--second-light); */
 }
 
 .slider {

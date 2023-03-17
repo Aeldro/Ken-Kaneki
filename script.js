@@ -81,6 +81,7 @@ const footer = document.querySelector('footer');
 const section = document.querySelectorAll('.individual-section');
 const darkMode = document.querySelector('.darkmode');
 const logo = document.querySelector('.image');
+const card = document.querySelector('.cardzer');
 
 darkMode.addEventListener('click', function() {
  
@@ -92,6 +93,7 @@ darkMode.addEventListener('click', function() {
     
   }
   logo.src = "./assets/logo-dark1-nuit.png";
+  card.style.color = "#6d0506";
   
 });
   
