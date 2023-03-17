@@ -19,7 +19,6 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-color: white;
 }
 
 .main-light {
@@ -42,7 +41,6 @@ body {
 /* Navigation */
 nav {
     position: fixed;
-    background-color: var(--second-light);
     height: 10rem;
     width: 100vw;
     z-index: 1;
@@ -194,7 +192,6 @@ main {
     width: 90%;
     height: 20vh;
     display: flex;
-    background-color: var(--main-light);
     box-shadow: 0 0 1rem black;
     margin: 2rem auto;
     border-radius: 0.5rem;
@@ -228,7 +225,6 @@ main {
 .arrow-button {
     width: 10%;
     height: 100%;
-    background-color: var(--second-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,7 +253,6 @@ li.show-carousel-img {
 
 .individual-section {
     color: white;
-    background: var(--second-light);
     box-shadow: #202020 0 0 0.5rem;
     margin: 2rem 1rem 2rem 1rem;
     border-radius: 1rem;
@@ -290,7 +285,6 @@ li.show-carousel-img {
 
 /* Footer */
 footer {
-    background: var(--second-light);
     color: white;
     padding-left: 1rem;
     height: 5vh;

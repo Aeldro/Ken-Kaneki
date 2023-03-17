@@ -89,7 +89,7 @@ darkMode.addEventListener('click', function() {
     
   }
   logo.src = "./assets/logo-dark1-nuit.png";
-  darkMode.style.backgroundImage = "url('./assets/bouton-nightMode.png')";
+  
 });
   
 
