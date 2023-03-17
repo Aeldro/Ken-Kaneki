@@ -14,6 +14,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -31,6 +32,8 @@ nav {
     height: 15vh;
     width: 100vw;
     z-index: 1;
+
+
 
 
 }
@@ -189,6 +192,7 @@ main {
     align-items: center;
     flex-direction: column;
     margin: auto;
+    overflow-x: hidden;
 }
 
 
@@ -312,8 +316,6 @@ section .evolution {
     align-items: center;
 
     display: flex;
-
-
     justify-content: center;
     margin-top: 10rem;
 
@@ -331,7 +333,7 @@ section .evolution {
 
     display: flex;
     margin: 2rem 0 5rem 0;
-    overflow: hidden;
+
     height: 37vh;
     width: 100%;
     /* a changer pour version bureau*/
@@ -346,6 +348,7 @@ section .evolution {
     -webkit-animation: scroll 70s linear infinite;
     animation: scroll 70s linear infinite;
     display: flex;
+    max-width: 100%;
 
 }
 
