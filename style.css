@@ -1,8 +1,11 @@
 /* General settings */
 :root {
     font-size: 62.5%;
+
     --second-light: #016990;
     --second-dark: #6d0506;
+    --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
+
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -13,6 +16,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -41,26 +45,27 @@ body {
 /* Navigation */
 nav {
     position: fixed;
-    height: 10rem;
+    height: 15vh;
     width: 100vw;
     z-index: 1;
+}
 
-}
-.logo{
-    position: fixed;
-    
+.logo {
+    position: fixed; 
     top: 0px;
-    left:0px;
+    left: 0px;
 }
-.logo .image{
+
+.logo .image {
     max-height: 10rem;
     width: auto;
 }
+
 .darkmode{
     background-image: url("./assets/bouton-dayMode.png");
     background-repeat: no-repeat;
     position: fixed;
-    
+
     margin: 0;
     padding: 0;
     top: 2.5rem;
@@ -68,12 +73,15 @@ nav {
     height: 5rem;
     width: 5rem;
 }
-.darkmode:hover{
+
+.darkmode:hover {
     transform: scale(1.05);
 }
-.rideau-toggler{
+
+.rideau-toggler {
     position: fixed;
-    z-index: 10; /* reste au 1er plan*/
+    z-index: 10;
+    /* reste au 1er plan*/
     top: 2rem;
     right: 3rem;
     height: 5rem;
@@ -87,73 +95,86 @@ nav {
     align-items: center;
     background: transparent;
 }
-.rideau-toggler:hover{
+
+.rideau-toggler:hover {
     transform: scale(1.05);
-   
+
 }
-/* la classe .ligne contient l1, l2 et l3 */
-.line{
+
+/* la classe .ligne contient l1, l2 et l3 (les 3 ligne du hamburber) */
+.line {
     position: absolute;
     display: block;
     height: 0.4rem;
     width: 100%;
+
     background: white;
     transition: transform 0.3s ease-out, opacity 0.1s ease-out; 
 }
-.l1{
+
+.l1 {
     transform: translateY(-12px);
-} 
-.l3{
+}
+
+.l3 {
     transform: translateY(12px);
-}   
-.rideau-toggler.active .l1{
+}
+
+.rideau-toggler.active .l1 {
     transform: translateY(0px) rotate(135deg);
 }
-.rideau-toggler.active .l2{
+
+.rideau-toggler.active .l2 {
     opacity: 0;
 }
-.rideau-toggler.active .l3{
+
+.rideau-toggler.active .l3 {
     transform: translateY(0px) rotate(-135deg);
 }
+
 /* LE MENU */
-.rideau{
+.rideau {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     width: 100vw;
-    min-height: 50vh;
+    min-height: 30vh;
     margin: auto;
-    background: black;
-    transform: translateY(-100%); /* position de depart ( -100% à gauche, +100% à droite
+    background: var(--main-color-fond-menu);
+    transform: translateY(-100%);
+    /* position de depart ( -100% à gauche, +100% à droite
                                     transalateY: ( -100% en haut, +100% en bas */
     transition: transform 0.6s ease-in-out;
     z-index: 1;
 }
 
-.rideau.active{
+.rideau.active {
     transform: translate(0);
 }
-.rideau a{
+
+.rideau a {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    
     display: block;
     color: var(--second-light);
     text-decoration: none;
     padding: 0.4rem;
-    margin:0.2rem;
+    margin: 0.2rem;
 }
-.rideau a:hover{
-    background-color: #555555;
-    border-radius: 40%;
-    
+
+.rideau a:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
 }
 
 
 /* Header */
 
 header {
+    margin-top: 15vh;
     background: no-repeat center/ 100% url("/assets/Wmis2d.gif");
     height: 20vh;
 
@@ -171,9 +192,6 @@ header h1 {
     text-shadow: 2px 2px 2px black;
 }
 
-
-
-
 /* Main */
 
 main {
@@ -182,6 +200,7 @@ main {
     align-items: center;
     flex-direction: column;
     margin: auto;
+    overflow-x: hidden;
 }
 
 
@@ -244,7 +263,7 @@ li.show-carousel-img {
 
 /* Section */
 .container-sections {
-    
+
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -267,12 +286,11 @@ li.show-carousel-img {
 }
 
 .individual-section h3 {
-    
-   font-size: 2.2rem; 
-   text-shadow: 0 0 1rem black;
+    font-size: 2.2rem;
+    text-shadow: 0 0 1rem black;
     letter-spacing: 0.3rem;
-   padding: 1rem;
-   text-align: center;
+    padding: 1rem;
+    text-align: center;
 }
 
 .individual-section p {
@@ -283,6 +301,63 @@ li.show-carousel-img {
 }
 
 
+/*EVOLUTION*/
+
+.card h2 {
+    color: var(--main-color);
+
+    border-radius: 1rem;
+    font-size: 2.1rem;
+
+    letter-spacing: 0.2rem;
+    margin-top: 5rem;
+}
+
+section .evolution {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+.slide img {
+    height: 35vh;
+    width: 22vh;
+    border: 5px solid#2762ec;
+}
+
+.slider {
+
+    display: flex;
+    margin: 2rem 0 5rem 0;
+
+    height: 37vh;
+    width: 100%;
+    /* a changer pour version bureau*/
+
+
+
+}
+
+.slider .slide-track {
+    -webkit-animation: scroll 70s linear infinite;
+    animation: scroll 70s linear infinite;
+    display: flex;
+    max-width: 100%;
+
+}
+
+
+@-webkit-keyframes scroll {
+    0% {
+        transform: translateX(200rem);
+    }
+
+    100% {
+        transform: translateX(calc(-30rem * 7));
+    }
+}
+
 /* Footer */
 footer {
     color: white;
@@ -290,5 +365,66 @@ footer {
     height: 5vh;
     display: flex;
     align-items: center;
-    font-weight: 700;
+    font-weight: 500;
+
+}
+
+/* MEDIA QUERY */
+@media screen and (min-width: 375px){
+    .line, .nav-toggler, .nav-toggler, .active, .nav-toggler:hover{
+        display: none;
+    }
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        height: 14.5vh;
+        min-height: 14.5vh;
+        margin: auto;
+        background: var(--main-color);
+        transform: translate(0);
+    }
+    .rideau {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 70vw;
+        min-height: 10vh;
+        margin: auto;
+        /* background: var(--main-color-fond-menu); */
+        transform: translateY(0);
+    }
+    .rideau a:hover{
+        transform: none;
+        background-color: var(--main-light);
+        color: var(--main-color);
+    }
+    .liste_menu{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+    nav a{
+        font-weight:lighter;
+        font-size: 1.0rem;
+        display:flex;
+        color: #f1f1f1;
+        text-decoration: none;
+        height: 100%;
+       
+    }
+    nav a:hover{
+        color:#555555;
+        background-color: white;
+        border-radius: 0;
+        border: none;
+        transition: 0.3s;
+    }  
 }
