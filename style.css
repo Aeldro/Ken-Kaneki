@@ -1,12 +1,13 @@
 /* General settings */
 :root {
     font-size: 62.5%;
-    --main-color: rgb(1, 105, 144);
+
+    --second-light: #016990;
+    --second-dark: #6d0506;
     --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
-    --second-color: #6d0506;
+
     --main-dark: #202020;
-    --second-dark: #3f3f3f;
-    --main-light: #e9e9e9;
+    --main-light: #deecf1;
     /* Mettre white en guise de second light */
 }
 
@@ -22,41 +23,48 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    overflow-x: hidden;
+}
+
+.main-light {
+    background-color: var(--main-light);
+}
+
+.main-dark {
+    background-color: var(--main-dark);
+}
+
+.second-light {
+    background-color: var(--second-light);
+}
+
+.second-dark {
+    background-color: var(--second-dark);
 }
 
 
 /* Navigation */
 nav {
     position: fixed;
-    background-color: var(--main-color);
     height: 15vh;
     width: 100vw;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    position: fixed; 
-    top: 0px;
+    display: flex;
+    align-items: flex-end;
     left: 0px;
+    height: 100%;
 }
 
 .logo .image {
     max-height: 10rem;
     width: auto;
-}
-
-.darkmode {
-    background: url("./assets/bouton-dayMode.png");
-    background-repeat: no-repeat;
-    position: fixed;
-
-    margin: 0;
-    padding: 0;
-    top: 2.5rem;
-    right: 12rem;
-    height: 5rem;
-    width: 5rem;
+    height: 100%;
 }
 
 .darkmode:hover {
@@ -64,21 +72,20 @@ nav {
 }
 
 .rideau-toggler {
-    position: fixed;
     z-index: 10;
     /* reste au 1er plan*/
-    top: 2rem;
-    right: 3rem;
-    height: 5rem;
+    height: 4rem;
     width: 5rem;
     border-radius: 8%;
     border: none;
     outline: none;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     background: transparent;
+    margin-right: 1.2rem;
 }
 
 .rideau-toggler:hover {
@@ -88,24 +95,24 @@ nav {
 
 /* la classe .ligne contient l1, l2 et l3 (les 3 ligne du hamburber) */
 .line {
-    position: absolute;
+    /* position: absolute; */
     display: block;
     height: 0.4rem;
     width: 100%;
-    background: var(--main-light);
-    transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+    background: white;
+    transition: transform 0.3s ease-out, opacity 0.1s ease-out; 
 }
 
-.l1 {
+/* .l1 {
     transform: translateY(-12px);
 }
 
 .l3 {
     transform: translateY(12px);
-}
+} */
 
 .rideau-toggler.active .l1 {
-    transform: translateY(0px) rotate(135deg);
+    transform: translateY(1.3rem) rotate(135deg);
 }
 
 .rideau-toggler.active .l2 {
@@ -113,7 +120,7 @@ nav {
 }
 
 .rideau-toggler.active .l3 {
-    transform: translateY(0px) rotate(-135deg);
+    transform: translateY(-1.3rem) rotate(-135deg);
 }
 
 /* LE MENU */
@@ -143,7 +150,7 @@ nav {
     font-size: 1.8rem;
     
     display: block;
-    color: var(--main-light);
+    color: white;
     text-decoration: none;
     padding: 0.4rem;
     margin: 0.2rem;
@@ -154,6 +161,52 @@ nav {
     transition: 0.3s;
 }
 
+/* Day-night button */
+.container-switch {
+    width: 6rem;
+    height: 3rem;
+    position: relative;
+}
+
+.label-switch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.input-switch {
+    position: absolute;
+    display: none;
+}
+
+.span-switch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: var(--main-light);
+}
+
+.span-switch::before {
+    content: "🌚";
+    position: absolute;
+    display: flex;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.input-switch:checked + .span-switch::before {
+    content: "🌞";
+    transform: translateX(3.3rem) rotate(360deg);
+}
+
+.input-switch:checked + .span-switch {
+    background-color: var(--main-dark);
+}
 
 /* Header */
 
@@ -179,7 +232,6 @@ header h1 {
 /* Main */
 
 main {
-    background-color: #deecf1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -196,7 +248,6 @@ main {
     width: 90%;
     height: 20vh;
     display: flex;
-    background-color: var(--main-light);
     box-shadow: 0 0 1rem black;
     margin: 2rem auto;
     border-radius: 0.5rem;
@@ -230,7 +281,6 @@ main {
 .arrow-button {
     width: 10%;
     height: 100%;
-    background-color: var(--main-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,8 +309,6 @@ li.show-carousel-img {
 
 .individual-section {
     color: white;
-    background: rgb(1, 105, 144);
-    /* background: linear-gradient(0deg, rgba(1,105,144,1) 0%, rgba(3,39,52,1) 100%); */
     box-shadow: #202020 0 0 0.5rem;
     margin: 2rem 1rem 2rem 1rem;
     border-radius: 1rem;
@@ -269,8 +317,7 @@ li.show-carousel-img {
 .individual-section img {
     float: left;
     width: 40%;
-    margin: 0.5rem;
-    margin-right: 1.5rem;
+    margin: 0.5rem 1.5rem 0.5rem 0.5rem;
     border-radius: 1rem;
     box-shadow: #202020 0 0 0.5rem;
 }
@@ -286,7 +333,6 @@ li.show-carousel-img {
 .individual-section p {
     font-size: 1.8rem;
     text-shadow: 0 0 0.5rem black;
-
     margin: 1.5rem;
     line-height: 2.5rem;
 }
@@ -296,10 +342,8 @@ li.show-carousel-img {
 
 .card h2 {
     color: var(--main-color);
-
     border-radius: 1rem;
     font-size: 2.1rem;
-
     letter-spacing: 0.2rem;
     margin-top: 5rem;
 }
@@ -314,20 +358,15 @@ section .evolution {
 .slide img {
     height: 35vh;
     width: 22vh;
-    border: 5px solid#2762ec;
+    border: 5px solid var(--second-light);
 }
 
 .slider {
-
     display: flex;
     margin: 2rem 0 5rem 0;
-
     height: 37vh;
     width: 100%;
     /* a changer pour version bureau*/
-
-
-
 }
 
 .slider .slide-track {
@@ -335,7 +374,6 @@ section .evolution {
     animation: scroll 70s linear infinite;
     display: flex;
     max-width: 100%;
-
 }
 
 
@@ -351,7 +389,6 @@ section .evolution {
 
 /* Footer */
 footer {
-    background: var(--main-color);
     color: white;
     padding-left: 1rem;
     height: 5vh;
@@ -362,7 +399,7 @@ footer {
 }
 
 /* MEDIA QUERY */
-@media screen and (min-width: 375px){
+/* @media screen and (min-width: 375px){
     .line, .nav-toggler, .nav-toggler, .active, .nav-toggler:hover{
         display: none;
     }
@@ -388,7 +425,7 @@ footer {
         width: 70vw;
         min-height: 10vh;
         margin: auto;
-        /* background: var(--main-color-fond-menu); */
+        background: var(--main-color-fond-menu);
         transform: translateY(0);
     }
     .rideau a:hover{
@@ -419,4 +456,4 @@ footer {
         border: none;
         transition: 0.3s;
     }  
-}
+} */
