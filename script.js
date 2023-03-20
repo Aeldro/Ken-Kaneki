@@ -17,24 +17,48 @@ hamburgerButton.addEventListener("click", function () {
 
 const leftArrow = document.querySelector(".left-arrow")
 const rightArrow = document.querySelector(".right-arrow")
+const containerCarouselButtons = document.querySelector(".container-carousel-buttons")
+const carouselButton = []
 const lisCarousel = document.querySelectorAll(".li-carousel")
 const carouselImgContainer = document.querySelector(".carousel-img-container")
 let countSet = 0
 let countDirection = true
+
+function countDirectionGestion() {
+  if (countSet <= 0) {
+    leftArrow.style.opacity = 0.5
+    countDirection = true
+  } else if (countSet >= lisCarousel.length - 1) {
+    rightArrow.style.opacity = 0.5
+    countDirection = false
+  } else {
+    leftArrow.style.opacity = 1
+  }
+}
+
+function createCarouselButton(tableOfCarouselImgs) {
+  tableOfCarouselImgs.forEach((el) => {
+    let newButton = document.createElement("button")
+    newButton.classList.add("carousel-button")
+    if (el.classList.contains("show-carousel-img")) {
+      newButton.classList.add("active-carousel-button")
+    }
+    containerCarouselButtons.appendChild(newButton)
+    carouselButton.push(newButton)
+  })
+}
 
 function rightArrowClick() {
   for (let i = 0; i < lisCarousel.length; i++) {
     if (lisCarousel[i].classList.contains("show-carousel-img") && i < lisCarousel.length - 1) {
       lisCarousel[i].classList.remove("show-carousel-img")
       lisCarousel[i + 1].classList.add("show-carousel-img")
+      carouselButton[i].classList.remove("active-carousel-button")
+      carouselButton[i + 1].classList.add("active-carousel-button")
       leftArrow.style.opacity = 1
       countSet++
       console.log(countSet);
-      if (i >= lisCarousel.length - 2) {
-        rightArrow.style.opacity = 0.5
-      } else {
-        rightArrow.style.opacity = 1
-      }
+      countDirectionGestion()
       break
     }
   }
@@ -45,15 +69,27 @@ function leftArrowClick() {
     if (lisCarousel[i].classList.contains("show-carousel-img") && i > 0) {
       lisCarousel[i].classList.remove("show-carousel-img")
       lisCarousel[i - 1].classList.add("show-carousel-img")
+      carouselButton[i].classList.remove("active-carousel-button")
+      carouselButton[i - 1].classList.add("active-carousel-button")
       rightArrow.style.opacity = 1
       countSet--
       console.log(countSet);
-      if (i <= 1) {
-        leftArrow.style.opacity = 0.5
-      } else {
-        leftArrow.style.opacity = 1
-      }
+      countDirectionGestion()
       break
+    }
+  }
+}
+
+function carouselButtonClick(el, index) {
+  for (let i = 0; i < lisCarousel.length; i++) {
+    if (lisCarousel[i].classList.contains("show-carousel-img")) {
+      lisCarousel[i].classList.remove("show-carousel-img")
+      lisCarousel[index].classList.add("show-carousel-img")
+      carouselButton[i].classList.remove("active-carousel-button")
+      el.classList.add("active-carousel-button")
+      countSet = index
+      console.log(countSet)
+      countDirectionGestion()
     }
   }
 }
@@ -70,6 +106,9 @@ function lightCarousel() {
   }
 }
 
+
+createCarouselButton(lisCarousel)
+carouselButton.forEach((el, index) => el.addEventListener("click", () => carouselButtonClick(el, index)))
 rightArrow.addEventListener("click", rightArrowClick)
 leftArrow.addEventListener("click", leftArrowClick)
 carouselImgContainer.addEventListener("click", (e) => {
@@ -83,18 +122,10 @@ carouselImgContainer.addEventListener("click", (e) => {
 setInterval(() => {
   if (countDirection === true) {
     rightArrowClick()
-    if (countSet === lisCarousel.length - 1) {
-      countDirection = false
-    } else {
-      // countSet++
-    }
   } else if (countDirection === false) {
     leftArrowClick()
-    if (countSet === 0) {
-      countDirection = true
-    } else {
-      // countSet--
-    }
+  } else {
+    countDirection = true
   }
 }, 1000)
 

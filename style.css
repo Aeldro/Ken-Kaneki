@@ -298,6 +298,23 @@ li.show-carousel-img {
     opacity: 1;
 }
 
+.container-carousel-buttons {
+    border: 1px solid gray;
+    border-radius: 1rem;
+}
+
+.carousel-button {
+    height: 2rem;
+    width: 2rem;
+    background-color: red;
+    margin: 0.5rem;
+    border-radius: 50%;
+}
+
+.active-carousel-button {
+    background-color: green;
+}
+
 /* Section */
 .container-sections {
 
