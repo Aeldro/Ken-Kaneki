@@ -28,6 +28,8 @@ function rightArrowClick() {
       lisCarousel[i].classList.remove("show-carousel-img")
       lisCarousel[i + 1].classList.add("show-carousel-img")
       leftArrow.style.opacity = 1
+      countSet++
+      console.log(countSet);
       if (i >= lisCarousel.length - 2) {
         rightArrow.style.opacity = 0.5
       } else {
@@ -44,6 +46,8 @@ function leftArrowClick() {
       lisCarousel[i].classList.remove("show-carousel-img")
       lisCarousel[i - 1].classList.add("show-carousel-img")
       rightArrow.style.opacity = 1
+      countSet--
+      console.log(countSet);
       if (i <= 1) {
         leftArrow.style.opacity = 0.5
       } else {
@@ -79,20 +83,20 @@ carouselImgContainer.addEventListener("click", (e) => {
 setInterval(() => {
   if (countDirection === true) {
     rightArrowClick()
-    if (countSet === lisCarousel.length - 2) {
+    if (countSet === lisCarousel.length - 1) {
       countDirection = false
     } else {
-      countSet++
+      // countSet++
     }
   } else if (countDirection === false) {
     leftArrowClick()
     if (countSet === 0) {
       countDirection = true
     } else {
-      countSet--
+      // countSet--
     }
   }
-}, 5000)
+}, 1000)
 
 // dark mode
 const main = document.querySelector('main');
