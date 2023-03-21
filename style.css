@@ -10,12 +10,15 @@
     /* Mettre white en guise de second light */
 }
 
+
+
 * {
     font-family: 'PT Serif', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
+    scrollbar-width: none; /* désactive les scrollbars */
+    
 }
 
 body {
@@ -23,6 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    
 }
 
 .main-light {
@@ -93,22 +97,22 @@ nav {
 
 }
 
-/* la classe .ligne contient l1, l2 et l3 (les 3 ligne du hamburber) */
+/* la classe .ligne contient l1, l2 et l3 (les 3 lignes du hamburber) */
 .line {
     /* position: absolute; */
     display: block;
-    height: 0.4rem;
+    height: 0.2rem;
     width: 100%;
     background: white;
     transition: transform 0.3s ease-out, opacity 0.1s ease-out; 
 }
 
 /* .l1 {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
 }
 
 .l3 {
-    transform: translateY(12px);
+    transform: translateY(8px);
 } */
 
 .rideau-toggler.active .l1 {
@@ -148,7 +152,7 @@ nav {
 .rideau a {
     font-weight: bold;
     font-size: 1.8rem;
-    
+    text-shadow: 1px 1px var(--second-dark);
     display: block;
     color: white;
     text-decoration: none;
@@ -157,7 +161,7 @@ nav {
 }
 
 .rideau a:hover {
-    transform: scale(1.2);
+    transform: scale(1.08);
     transition: 0.3s;
 }
 
@@ -214,20 +218,64 @@ header {
     margin-top: 15vh;
     background: no-repeat center/ 100% url("/assets/Wmis2d.gif");
     height: 20vh;
+    display: flex;
+    flex-direction: column;
 
 }
 
 header h1 {
     color: white;
     font-size: 3rem;
-    display: flex;
+    display: flex;          /* pour disposer h1 et citation..*/
+    flex-direction: column; /* .. en colonne */
     justify-content: center;
     align-items: center;
     height: 100%;
-
-
     text-shadow: 2px 2px 2px black;
 }
+/* texte defilant */
+/* container texte defilant */
+.defile{
+    overflow: hidden;
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    /* border: 1px solid red; */
+    border-radius: 0.5em;
+    /* background-color: var(--second-light); */
+    background-color: var(--main-color-fond-menu);
+    
+    
+ }
+ /* definir font et vitesse de defilement */
+ .defile > div {
+     display: inline-block;
+     white-space: nowrap;
+     animation: defilement 100s infinite linear;
+     cursor: pointer;
+     padding-bottom: 0.6rem ;
+     font-size: 1.6rem;
+     color: var(--main-light);
+     text-shadow: 1px 1px var(--second-dark);
+ 
+ }
+ .auteur{
+     font-style: italic;
+ }
+ /* Hover: pause du defil (facultatif */
+ .defile:hover >div {
+     animation-play-state: paused;
+ }
+ @keyframes defilement {
+     0%{
+         -webkit-transform: translate(0);
+         transform: translate(0);
+     }
+     100%{
+         -webkit-transform: translate(-100%);
+         transform: translate(-100%);    
+     }
+ }
 
 /* Main */
 
@@ -245,11 +293,11 @@ main {
 /* Carousel */
 
 .carousel-container {
-    width: 90%;
+    width: 70%;
     height: 20vh;
     display: flex;
     box-shadow: 0 0 1rem black;
-    margin: 2rem auto;
+    margin: 2rem auto 0.5rem auto;
     border-radius: 0.5rem;
 }
 
@@ -296,6 +344,30 @@ main {
 
 li.show-carousel-img {
     opacity: 1;
+}
+
+.container-carousel-buttons {
+    /* border: 1px solid gray; */
+    border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.carousel-button {
+    height: 2rem;
+    width: 2rem;
+    /* background-color: red; */
+    margin: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--main-dark);
+    opacity: .3;
+}
+
+.active-carousel-button {
+    background-color: var(--second-light);
+    box-shadow: 0 0 0.8rem var(--second-light);
+    opacity: .7;
 }
 
 /* Section */
@@ -408,61 +480,68 @@ footer {
 }
 
 /* MEDIA QUERY */
-/* @media screen and (min-width: 375px){
-    .line, .nav-toggler, .nav-toggler, .active, .nav-toggler:hover{
+@media screen and (min-width: 720px){
+
+    /* Nav */
+    .line, .nav-toggler, .nav-toggler .active, .nav-toggler:hover {
         display: none;
     }
-    nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        width: 100vw;
-        height: 14.5vh;
-        min-height: 14.5vh;
-        margin: auto;
-        background: var(--main-color);
-        transform: translate(0);
-    }
+      
     .rideau {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        justify-content:space-evenly;
+        align-items: end;
         position: fixed;
-        width: 70vw;
-        min-height: 10vh;
-        margin: auto;
-        /* background: var(--main-color-fond-menu); 
-        transform: translateY(0);
-    }
-    .rideau a:hover{
+        width: 100%;
+        height: auto;
+        min-height: 15vh;
+        z-index: 0;
+        /* border: 1px solid red; */
+        background:none; /* pas de fond si le menu est sur la nav*/
         transform: none;
-        background-color: var(--main-light);
-        color: var(--main-color);
     }
+    
+    .rideau-toggler {
+        display: none;
+    }
+    
+    
+    /* .rideau a:hover {
+        transform: scale(1.06);
+        
+        transition: 0.3s;
+        
+    }
+     */
     .liste_menu{
         display: flex;
-        justify-content:space-around;
         align-items: center;
         flex-direction: row;
         
     }
-    nav a{
+    /* nav a{
         font-weight:lighter;
         font-size: 1.0rem;
         display:flex;
-        color: #f1f1f1;
         text-decoration: none;
         height: 100%;
        
-    }
-    nav a:hover{
-        color:#555555;
-        background-color: white;
-        border-radius: 0;
-        border: none;
-        transition: 0.3s;
-    }  
-} */
+    } */
+
+    /* Header */
+
+
+    /* Main */
+
+    /* Carousel */
+
+    /* Sections */
+
+    /* Evolution */
+
+
+    /* Footer */
+    
+   
+}
