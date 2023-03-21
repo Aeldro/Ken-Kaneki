@@ -5,7 +5,6 @@
     --second-light: #016990;
     --second-dark: #6d0506;
     --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
-
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -45,6 +44,7 @@ body {
 .second-dark {
     background-color: var(--second-dark);
 }
+
 
 
 /* Navigation */
@@ -412,8 +412,8 @@ li.show-carousel-img {
 
 /*EVOLUTION*/
 
-.card h2 {
-    color: var(--main-color);
+.cardzer {
+    color: var(--second-light);
     border-radius: 1rem;
     font-size: 2.1rem;
     letter-spacing: 0.2rem;
@@ -427,12 +427,17 @@ section .evolution {
     margin-top: 10rem;
 }
 
-.slide img {
+.dark-border {
     height: 35vh;
     width: 22vh;
     border: 5px solid var(--second-light);
 }
 
+.dark-mode-border {
+    height: 35vh;
+    width: 22vh;
+    border: 5px solid var(--second-dark);
+}
 .slider {
     display: flex;
     margin: 2rem 0 5rem 0;
@@ -446,6 +451,10 @@ section .evolution {
     animation: scroll 70s linear infinite;
     display: flex;
     max-width: 100%;
+}
+
+.second-dark-typo {
+    color: var(--second-dark);
 }
 
 

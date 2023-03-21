@@ -130,27 +130,51 @@ setInterval(() => {
 }, 1000)
 
 // dark mode
+const darkMode = document.querySelector('.input-switch');
 const main = document.querySelector('main');
 const nav = document.querySelector('nav');
 const footer = document.querySelector('footer');
 const section = document.querySelectorAll('.individual-section');
-const darkMode = document.querySelector('.darkmode');
 const logo = document.querySelector('.image');
+const card = document.querySelector('.cardzer');
+const arrowButton = document.querySelectorAll('.arrow-button');
+const slideBorder = document.querySelectorAll('.dark-border');
 
-darkMode.addEventListener('click', function () {
+function toggleDarkMode() {
 
-  main.style.backgroundColor = "#202020";
-  nav.style.backgroundColor = "#6d0506";
-  footer.style.backgroundColor = "#6d0506";
+  main.classList.toggle('main-dark');
+  nav.classList.toggle('second-dark');
+  footer.classList.toggle('second-dark');
+  card.classList.toggle('second-dark-typo');
   for (let i = 0; i < section.length; i++) {
-    section[i].style.backgroundColor = "#6d0506";
-
+    section[i].classList.toggle('second-dark');
   }
-  logo.src = "./assets/logo-dark1-nuit.png";
+  for (let i = 0; i < arrowButton.length; i++) {
+    arrowButton[i].classList.toggle('second-dark');
+  }
+  if (this.checked) {
+    logo.src = './assets/logo-dark1-nuit.png'
+    darkCarousel()
+    for (let i = 0; i < slideBorder.length; i++) {
+      slideBorder[i].classList.toggle('dark-mode-border');
+    }
+    for (let i = 0; i < section.length; i++) {
+      section[i].firstChild.src = `./assets/section-dark-${i + 1}.jpg`
+    }
+  } else {
+    logo.src = './assets/logo-dark1-jour.png'
+    lightCarousel()
+    for (let i = 0; i < slideBorder.length; i++) {
+      slideBorder[i].classList.toggle('dark-mode-border');
+    }
+    for (let i = 0; i < section.length; i++) {
+      section[i].firstChild.src = `./assets/section-light-${i + 1}.jpg`
+    }
+  }
 
-});
+}
 
-
+darkMode.addEventListener('change', toggleDarkMode);
 
 
 
