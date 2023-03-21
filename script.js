@@ -38,7 +38,7 @@ function countDirectionGestion() {
 
 function createCarouselButton(tableOfCarouselImgs) {
   tableOfCarouselImgs.forEach((el) => {
-    let newButton = document.createElement("button")
+    let newButton = document.createElement("div")
     newButton.classList.add("carousel-button")
     if (el.classList.contains("show-carousel-img")) {
       newButton.classList.add("active-carousel-button")

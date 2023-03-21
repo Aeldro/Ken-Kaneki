@@ -249,7 +249,7 @@ main {
     height: 20vh;
     display: flex;
     box-shadow: 0 0 1rem black;
-    margin: 2rem auto;
+    margin: 2rem auto 0.5rem auto;
     border-radius: 0.5rem;
 }
 
@@ -299,20 +299,27 @@ li.show-carousel-img {
 }
 
 .container-carousel-buttons {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .carousel-button {
     height: 2rem;
     width: 2rem;
-    background-color: red;
+    /* background-color: red; */
     margin: 0.5rem;
     border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--main-dark);
+    opacity: .3;
 }
 
 .active-carousel-button {
-    background-color: green;
+    background-color: var(--second-light);
+    box-shadow: 0 0 0.8rem var(--second-light);
+    opacity: .7;
 }
 
 /* Section */
