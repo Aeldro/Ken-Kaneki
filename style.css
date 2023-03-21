@@ -22,6 +22,7 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .main-light {
@@ -47,30 +48,22 @@ nav {
     height: 15vh;
     width: 100vw;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    position: fixed; 
-    top: 0px;
+    display: flex;
+    align-items: flex-end;
     left: 0px;
+    height: 100%;
 }
 
 .logo .image {
     max-height: 10rem;
     width: auto;
-}
-
-.darkmode{
-    background-image: url("./assets/bouton-dayMode.png");
-    background-repeat: no-repeat;
-    position: fixed;
-
-    margin: 0;
-    padding: 0;
-    top: 2.5rem;
-    right: 12rem;
-    height: 5rem;
-    width: 5rem;
+    height: 100%;
 }
 
 .darkmode:hover {
@@ -78,21 +71,20 @@ nav {
 }
 
 .rideau-toggler {
-    position: fixed;
     z-index: 10;
     /* reste au 1er plan*/
-    top: 2rem;
-    right: 3rem;
-    height: 5rem;
+    height: 4rem;
     width: 5rem;
     border-radius: 8%;
     border: none;
     outline: none;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     background: transparent;
+    margin-right: 1.2rem;
 }
 
 .rideau-toggler:hover {
@@ -102,25 +94,24 @@ nav {
 
 /* la classe .ligne contient l1, l2 et l3 (les 3 ligne du hamburber) */
 .line {
-    position: absolute;
+    /* position: absolute; */
     display: block;
     height: 0.4rem;
     width: 100%;
-
     background: white;
     transition: transform 0.3s ease-out, opacity 0.1s ease-out; 
 }
 
-.l1 {
+/* .l1 {
     transform: translateY(-12px);
 }
 
 .l3 {
     transform: translateY(12px);
-}
+} */
 
 .rideau-toggler.active .l1 {
-    transform: translateY(0px) rotate(135deg);
+    transform: translateY(1.3rem) rotate(135deg);
 }
 
 .rideau-toggler.active .l2 {
@@ -128,7 +119,7 @@ nav {
 }
 
 .rideau-toggler.active .l3 {
-    transform: translateY(0px) rotate(-135deg);
+    transform: translateY(-1.3rem) rotate(-135deg);
 }
 
 /* LE MENU */
@@ -169,6 +160,52 @@ nav {
     transition: 0.3s;
 }
 
+/* Day-night button */
+.container-switch {
+    width: 6rem;
+    height: 3rem;
+    position: relative;
+}
+
+.label-switch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.input-switch {
+    position: absolute;
+    display: none;
+}
+
+.span-switch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: var(--main-light);
+}
+
+.span-switch::before {
+    content: "🌚";
+    position: absolute;
+    display: flex;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.input-switch:checked + .span-switch::before {
+    content: "🌞";
+    transform: translateX(3.3rem) rotate(360deg);
+}
+
+.input-switch:checked + .span-switch {
+    background-color: var(--main-dark);
+}
 
 /* Header */
 
@@ -303,7 +340,11 @@ li.show-carousel-img {
 /*EVOLUTION*/
 
 .card h2 {
+<<<<<<< HEAD
     color: var(--second-light);
+=======
+    color: var(--main-color);
+>>>>>>> fcea1d90221f460618171bb121fe936337168975
     border-radius: 1rem;
     font-size: 2.1rem;
     letter-spacing: 0.2rem;
@@ -320,20 +361,19 @@ section .evolution {
 .slide img {
     height: 35vh;
     width: 22vh;
+<<<<<<< HEAD
     /* border: 0.3rem solid var(--second-light); */
+=======
+    border: 5px solid var(--second-light);
+>>>>>>> fcea1d90221f460618171bb121fe936337168975
 }
 
 .slider {
-
     display: flex;
     margin: 2rem 0 5rem 0;
-
     height: 37vh;
     width: 100%;
     /* a changer pour version bureau*/
-
-
-
 }
 
 .slider .slide-track {
@@ -341,7 +381,6 @@ section .evolution {
     animation: scroll 70s linear infinite;
     display: flex;
     max-width: 100%;
-
 }
 
 
@@ -367,7 +406,11 @@ footer {
 }
 
 /* MEDIA QUERY */
+<<<<<<< HEAD
 /* @media screen and (min-width: 375px){ 
+=======
+/* @media screen and (min-width: 375px){
+>>>>>>> fcea1d90221f460618171bb121fe936337168975
     .line, .nav-toggler, .nav-toggler, .active, .nav-toggler:hover{
         display: none;
     }
@@ -393,7 +436,11 @@ footer {
         width: 70vw;
         min-height: 10vh;
         margin: auto;
+<<<<<<< HEAD
         /* background: var(--main-color-fond-menu); 
+=======
+        background: var(--main-color-fond-menu);
+>>>>>>> fcea1d90221f460618171bb121fe936337168975
         transform: translateY(0);
     }
     .rideau a:hover{

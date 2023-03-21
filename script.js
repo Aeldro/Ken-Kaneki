@@ -8,7 +8,7 @@ function toggleNav() {
   navigation.classList.toggle("active")
 }
 
-hamburgerButton.addEventListener("click", function() {
+hamburgerButton.addEventListener("click", function () {
   toggleNav()
 })
 
@@ -19,6 +19,8 @@ const leftArrow = document.querySelector(".left-arrow")
 const rightArrow = document.querySelector(".right-arrow")
 const lisCarousel = document.querySelectorAll(".li-carousel")
 const carouselImgContainer = document.querySelector(".carousel-img-container")
+let countSet = 0
+let countDirection = true
 
 function rightArrowClick() {
   for (let i = 0; i < lisCarousel.length; i++) {
@@ -53,14 +55,14 @@ function leftArrowClick() {
 }
 
 function darkCarousel() {
-  for(let i = 0; i < lisCarousel.length; i++) {
-    lisCarousel[i].firstChild.src = `./assets/caroudark${i+1}.jpg`
+  for (let i = 0; i < lisCarousel.length; i++) {
+    lisCarousel[i].firstChild.src = `./assets/caroudark${i + 1}.jpg`
   }
 }
 
 function lightCarousel() {
-  for(let i = 0; i < lisCarousel.length; i++) {
-    lisCarousel[i].firstChild.src = `./assets/carousel${i+1}.jpg`
+  for (let i = 0; i < lisCarousel.length; i++) {
+    lisCarousel[i].firstChild.src = `./assets/carousel${i + 1}.jpg`
   }
 }
 
@@ -74,6 +76,24 @@ carouselImgContainer.addEventListener("click", (e) => {
   }
 })
 
+setInterval(() => {
+  if (countDirection === true) {
+    rightArrowClick()
+    if (countSet === lisCarousel.length - 2) {
+      countDirection = false
+    } else {
+      countSet++
+    }
+  } else if (countDirection === false) {
+    leftArrowClick()
+    if (countSet === 0) {
+      countDirection = true
+    } else {
+      countSet--
+    }
+  }
+}, 5000)
+
 // dark mode
 const main = document.querySelector('main');
 const nav = document.querySelector('nav');
@@ -83,20 +103,24 @@ const darkMode = document.querySelector('.darkmode');
 const logo = document.querySelector('.image');
 const card = document.querySelector('.cardzer');
 
-darkMode.addEventListener('click', function() {
- 
+darkMode.addEventListener('click', function () {
+
   main.style.backgroundColor = "#202020";
   nav.style.backgroundColor = "#6d0506";
   footer.style.backgroundColor = "#6d0506";
   for (let i = 0; i < section.length; i++) {
     section[i].style.backgroundColor = "#6d0506";
-    
+
   }
   logo.src = "./assets/logo-dark1-nuit.png";
+<<<<<<< HEAD
   card.style.color = "#6d0506";
   
+=======
+
+>>>>>>> fcea1d90221f460618171bb121fe936337168975
 });
-  
+
 
 
 
