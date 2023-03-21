@@ -293,7 +293,7 @@ main {
 /* Carousel */
 
 .carousel-container {
-    width: 90%;
+    width: 70%;
     height: 20vh;
     display: flex;
     box-shadow: 0 0 1rem black;
@@ -448,6 +448,8 @@ footer {
 
 /* MEDIA QUERY */
 @media screen and (min-width: 720px){
+
+    /* Nav */
     .line, .nav-toggler, .nav-toggler .active, .nav-toggler:hover {
         display: none;
     }
@@ -465,6 +467,10 @@ footer {
         /* border: 1px solid red; */
         background:none; /* pas de fond si le menu est sur la nav*/
         transform: none;
+    }
+    
+    .rideau-toggler {
+        display: none;
     }
     
     
@@ -489,6 +495,20 @@ footer {
         height: 100%;
        
     } */
+
+    /* Header */
+
+
+    /* Main */
+
+    /* Carousel */
+
+    /* Sections */
+
+    /* Evolution */
+
+
+    /* Footer */
     
    
 }
