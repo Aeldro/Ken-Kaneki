@@ -191,13 +191,13 @@ let scrollSpeed = 70;
 /* plus vite */
 
 faster.addEventListener("click", function () {
-  scrollSpeed -= 20;
+  scrollSpeed -= 15;
   track.style.animationDuration = `${scrollSpeed}s`;
 });
 
 /* moins vite  */
 
 slower.addEventListener("click", function () {
-  scrollSpeed += 20;
+  scrollSpeed += 15;
   track.style.animationDuration = `${scrollSpeed}s`;
 });
