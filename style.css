@@ -4,8 +4,9 @@
 
     --second-light: #016990;
     --second-dark: #6d0506;
-    --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
-    --main-dark-fond-menu: rgb(109, 5, 6,0.6);
+    --main-color-fond-menu: rgba(1, 105, 144, 0.6);
+    /* fond du menu avec transparence */
+    --main-dark-fond-menu: rgb(109, 5, 6, 0.6);
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -28,7 +29,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-
 }
 
 .main-light {
@@ -137,6 +137,7 @@ nav {
     align-items: center;
     position: fixed;
     width: 100vw;
+    min-height: 25rem;
     height: 30vh;
     margin: auto;
     background: var(--main-color-fond-menu);
@@ -217,18 +218,16 @@ nav {
 /* Header */
 
 .header {
-    margin-top: 15vh;
     background: no-repeat center/ 100% url("/assets/Wmis2d.gif");
     height: 20vh;
     display: flex;
     flex-direction: column;
+    margin-top: 15vh;
 }
 
 .dark-header {
     background: no-repeat center/ 100% url("/assets/dark-header.jpg");
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
+    background-position-y: 30%;
 }
 
 .main-title {
@@ -255,47 +254,44 @@ nav {
     /* background-color: var(--second-light); */
     background-color: var(--main-color-fond-menu);
 }
-    
+
 .dark-defile {
-        overflow: hidden;
-        width: 90%;
-        max-width: 90%;
-        margin: auto;
-        /* border: 1px solid red; */
-        border-radius: 0.5em;
-        /* background-color: var(--second-light); */
-        background-color: var(--main-dark-fond-menu);
+    background-color: var(--main-dark-fond-menu);
 }
- 
- /* definir font et vitesse de defilement */
- .defile > div {
-     display: inline-block;
-     white-space: nowrap;
-     animation: defilement 100s infinite linear;
-     cursor: pointer;
-     padding-bottom: 0.6rem ;
-     font-size: 1.6rem;
-     color: var(--main-light);
-     text-shadow: 1px 1px var(--second-dark);
- 
- }
- .auteur{
-     font-style: italic;
- }
- /* Hover: pause du defil (facultatif */
- .defile:hover >div {
-     animation-play-state: paused;
- }
- @keyframes defilement {
-     0%{
-         -webkit-transform: translate(0);
-         transform: translate(0);
-     }
-     100%{
-         -webkit-transform: translate(-100%);
-         transform: translate(-100%);    
-     }
- }
+
+/* definir font et vitesse de defilement */
+.defile>div {
+    display: inline-block;
+    white-space: nowrap;
+    animation: defilement 100s infinite linear;
+    cursor: pointer;
+    padding-bottom: 0.6rem;
+    font-size: 1.6rem;
+    color: var(--main-light);
+    text-shadow: 1px 1px var(--second-dark);
+
+}
+
+.auteur {
+    font-style: italic;
+}
+
+/* Hover: pause du defil (facultatif */
+.defile:hover>div {
+    animation-play-state: paused;
+}
+
+@keyframes defilement {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%);
+        transform: translate(-100%);
+    }
+}
 
 
 /* Main */
@@ -316,6 +312,7 @@ main {
 .carousel-container {
     width: 70%;
     height: 20vh;
+    min-height: 15rem;
     display: flex;
     box-shadow: 0 0 1rem black;
     margin: 6vh auto 0.5rem auto;
@@ -403,6 +400,7 @@ li.show-carousel-img {
     box-shadow: #202020 0 0 0.5rem;
     margin: 0 1rem 6vh 1rem;
     border-radius: 1rem;
+    scroll-margin-top: 18vh;
 }
 
 .individual-section img {
@@ -427,7 +425,6 @@ li.show-carousel-img {
     margin: 1.5rem;
     line-height: 2.5rem;
 }
-
 
 /*EVOLUTION*/
 
@@ -488,7 +485,7 @@ section .evolution {
     padding: 0.5rem;
     text-shadow: black 0 0 0.3rem;
     background-color: var(--second-dark);
-    
+
 }
 
 
@@ -562,9 +559,8 @@ footer {
         position: relative;
         width: 60%;
         height: auto;
-        /* min-height: 15vh; */
+        min-height: auto;
         z-index: 0;
-        /* border: 1px solid red; */
         background: none;
         /* pas de fond si le menu est sur la nav*/
         transform: none;
@@ -578,14 +574,6 @@ footer {
         display: none;
     }
 
-
-    /* .rideau a:hover {
-        transform: scale(1.06);
-        
-        transition: 0.3s;
-        
-    }
-     */
     .liste_menu {
         display: flex;
         align-items: center;
@@ -593,24 +581,19 @@ footer {
 
     }
 
-    /* nav a{
-        font-weight:lighter;
-        font-size: 1.0rem;
-        display:flex;
-        text-decoration: none;
-        height: 100%;
-       
-    } */
-
     /* Day night button */
     .container-switch {
         margin-right: 5rem;
     }
 
     /* Header */
-.header {
-    margin-top: 10vh;
-}
+    .header {
+        margin-top: 10vh;
+    }
+
+    .dark-header {
+        background: no-repeat / 100% url("/assets/dark-header.jpg");
+    }
 
     /* Main */
     main {
@@ -642,7 +625,6 @@ footer {
     }
 
     /*boutons + et - */
-
     .button {
 
         gap: 5rem;
