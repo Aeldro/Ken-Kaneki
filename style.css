@@ -218,8 +218,9 @@ nav {
 /* Header */
 
 .header {
-    background: no-repeat center/ 100% url("/assets/Wmis2d.gif");
-    height: 20vh;
+    margin-top: 10vh;
+    background: no-repeat center url("/assets/Wmis2d.gif");
+    height: 30vh;
     display: flex;
     flex-direction: column;
     margin-top: 15vh;
@@ -256,6 +257,13 @@ nav {
 }
 
 .dark-defile {
+    overflow: hidden;
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    /* border: 1px solid red; */
+    border-radius: 0.5em;
+    /* background-color: var(--second-light); */
     background-color: var(--main-dark-fond-menu);
 }
 
@@ -588,12 +596,20 @@ footer {
 
     /* Header */
     .header {
+
         margin-top: 10vh;
+        background: no-repeat center / 100% url("/assets/headerdesktop.jpg");
+        height: 40vh;
     }
 
     .dark-header {
         background: no-repeat / 100% url("/assets/dark-header.jpg");
     }
+
+body {
+    width: 100%;
+    background-color: #323131;
+}
 
     /* Main */
     main {
@@ -650,6 +666,7 @@ footer {
     footer {
 
         box-shadow: 0 0 5rem var(--main-dark);
+        justify-content: center;
     }
 
 }
