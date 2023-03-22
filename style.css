@@ -449,16 +449,19 @@ li.show-carousel-img {
     margin-top: 0;
 }
 
-section .evolution {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    /* margin-top: 10rem; */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-150px * 30));
+    }
 }
 
 .dark-border {
     height: 100%;
-    width: 22vh;
+    /* width: 22vh; */
     border: 5px solid var(--second-light);
 }
 
@@ -467,26 +470,29 @@ section .evolution {
 }
 
 .slider {
-    display: flex;
-    margin: 0 0 1.5rem 0;
-    height: 30vh;
-    width: 100%;
-    /* a changer pour version bureau*/
+    margin: auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .track {
-    -webkit-animation: scroll linear infinite;
     animation: scroll linear infinite;
-    animation-duration: 70s;
-    animation-delay: 0.5s;
     display: flex;
-    max-width: 100%;
+    width: calc(150px * 15);
 }
 
 
 .track:hover {
     animation-play-state: paused;
     cursor: pointer;
+}
+
+.slide {
+    width: 150px;
+}
+
+.slide img {
+    width: 150px;
 }
 
 .second-dark-typo {
@@ -498,15 +504,7 @@ section .evolution {
 }
 
 
-@-webkit-keyframes scroll {
-    0% {
-        transform: translateX(180rem);
-    }
 
-    100% {
-        transform: translateX(calc(-20rem * 7));
-    }
-}
 
 /*boutons + et - */
 
@@ -515,7 +513,7 @@ section .evolution {
     gap: 5rem;
     margin-top: 0;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
 }
 
 button {
