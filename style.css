@@ -612,6 +612,11 @@ footer {
     margin-top: 10vh;
 }
 
+body {
+    width: 100%;
+    background-color: #323131;
+}
+
     /* Main */
     main {
         width: 80%;

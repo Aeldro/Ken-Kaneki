@@ -160,6 +160,7 @@ const paragraphOne = document.querySelector('.p-1');
 const paragraphTwo = document.querySelector('.p-2');
 const paragraphThree = document.querySelector('.p-3');
 const paragraphFour = document.querySelector('.p-4');
+const body = document.querySelector('body');
 
 function toggleDarkMode() {
 
@@ -169,7 +170,6 @@ function toggleDarkMode() {
   nav.classList.toggle('second-dark');
   footer.classList.toggle('second-dark');
   card.classList.toggle('second-dark-typo');
-  
   for (let i = 0; i < section.length; i++) {
     section[i].classList.toggle("second-dark");
   }
@@ -177,6 +177,7 @@ function toggleDarkMode() {
     arrowButton[i].classList.toggle("second-dark");
   }
   if (this.checked) {
+    body.style.backgroundColor = '#383838';
     rideau.style.backgroundColor = 'rgb(109, 5, 6,0.6)';
     buttonSlower.style.background = 'var(--second-dark)';
     buttonFaster.style.background = 'var(--second-dark)';
@@ -202,6 +203,7 @@ function toggleDarkMode() {
       section[i].firstChild.src = `./assets/section-dark-${i + 1}.jpg`;
     }
   } else {
+    body.style.backgroundColor = 'var(--main-light)';
     rideau.style.backgroundColor = 'var(--main-color-fond-menu)';
     buttonSlower.style.background = 'var(--second-light)';
     buttonFaster.style.background = 'var(--second-light)';
