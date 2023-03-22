@@ -271,19 +271,24 @@ const slower = document.querySelector(".slower");
 const track = document.querySelector(".track");
 
 /* vitesse de base */
-let scrollSpeed = 70;
-let startPosition = 0;
+let scrollSpeed = 10;
+
+function speedInit(speed) {
+  track.style.animationDuration = `${speed}s`;
+}
+
+speedInit(scrollSpeed)
 
 /* plus vite */
 
 faster.addEventListener("click", function () {
   scrollSpeed -= 15;
-  track.style.animationDuration = `${scrollSpeed}s`;
+  speedInit(scrollSpeed)
 });
 
 /* moins vite  */
 
 slower.addEventListener("click", function () {
   scrollSpeed += 15;
-  track.style.animationDuration = `${scrollSpeed}s`;
+  speedInit(scrollSpeed)
 });
