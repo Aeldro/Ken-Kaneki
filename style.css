@@ -4,8 +4,10 @@
 
     --second-light: #016990;
     --second-dark: #6d0506;
-    --main-color-fond-menu: rgba(1, 105, 144, 0.6);
-    /* fond du menu avec transparence */
+
+    --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
+    --main-dark-fond-menu: rgb(109, 5, 6,0.6);
+
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -216,16 +218,23 @@ nav {
 
 /* Header */
 
-header {
+.header {
     margin-top: 15vh;
     background: no-repeat center/ 100% url("/assets/Wmis2d.gif");
     height: 20vh;
     display: flex;
     flex-direction: column;
-
 }
 
-header h1 {
+.dark-header {
+    margin-top: 15vh;
+    background: no-repeat center/ 100% url("/assets/dark-header.jpg");
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
     color: white;
     font-size: 3rem;
     display: flex;
@@ -235,7 +244,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     height: 100%;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 0 0 2rem black;
 }
 
 /* texte defilant */
@@ -249,43 +258,49 @@ header h1 {
     border-radius: 0.5em;
     /* background-color: var(--second-light); */
     background-color: var(--main-color-fond-menu);
-
-
 }
-
-/* definir font et vitesse de defilement */
-.defile>div {
-    display: inline-block;
-    white-space: nowrap;
-    animation: defilement 100s infinite linear;
-    cursor: pointer;
-    padding-bottom: 0.6rem;
-    font-size: 1.6rem;
-    color: var(--main-light);
-    text-shadow: 1px 1px var(--second-dark);
-
+    
+.dark-defile {
+        overflow: hidden;
+        width: 90%;
+        max-width: 90%;
+        margin: auto;
+        /* border: 1px solid red; */
+        border-radius: 0.5em;
+        /* background-color: var(--second-light); */
+        background-color: var(--main-dark-fond-menu);
 }
+ 
+ /* definir font et vitesse de defilement */
+ .defile > div {
+     display: inline-block;
+     white-space: nowrap;
+     animation: defilement 100s infinite linear;
+     cursor: pointer;
+     padding-bottom: 0.6rem ;
+     font-size: 1.6rem;
+     color: var(--main-light);
+     text-shadow: 1px 1px var(--second-dark);
+ 
+ }
+ .auteur{
+     font-style: italic;
+ }
+ /* Hover: pause du defil (facultatif */
+ .defile:hover >div {
+     animation-play-state: paused;
+ }
+ @keyframes defilement {
+     0%{
+         -webkit-transform: translate(0);
+         transform: translate(0);
+     }
+     100%{
+         -webkit-transform: translate(-100%);
+         transform: translate(-100%);    
+     }
+ }
 
-.auteur {
-    font-style: italic;
-}
-
-/* Hover: pause du defil (facultatif */
-.defile:hover>div {
-    animation-play-state: paused;
-}
-
-@keyframes defilement {
-    0% {
-        -webkit-transform: translate(0);
-        transform: translate(0);
-    }
-
-    100% {
-        -webkit-transform: translate(-100%);
-        transform: translate(-100%);
-    }
-}
 
 /* Main */
 
@@ -375,8 +390,8 @@ li.show-carousel-img {
 }
 
 .active-carousel-button {
-    background-color: var(--second-light);
-    box-shadow: 0 0 0.8rem var(--second-light);
+    background-color: var(--main-dark);
+    box-shadow: 0 0 0.8rem var(--main-dark);
     opacity: .7;
 }
 
@@ -423,11 +438,14 @@ li.show-carousel-img {
 /*EVOLUTION*/
 
 .cardzer {
-    color: var(--second-light);
+    color: white;
+    text-shadow: black 0 0 0.3rem;
+    background-color: var(--second-light);
     border-radius: 1rem;
     font-size: 2.1rem;
     letter-spacing: 0.2rem;
     margin-top: 5rem;
+    padding: 0.5rem;
 }
 
 section .evolution {
@@ -472,7 +490,11 @@ section .evolution {
 }
 
 .second-dark-typo {
-    color: var(--second-dark);
+    color: white;
+    padding: 0.5rem;
+    text-shadow: black 0 0 0.3rem;
+    background-color: var(--second-dark);
+    
 }
 
 
