@@ -271,7 +271,7 @@ const slower = document.querySelector(".slower");
 const track = document.querySelector(".track");
 
 /* vitesse de base */
-let scrollSpeed = 10;
+let scrollSpeed = 70;
 
 function speedInit(speed) {
   track.style.animationDuration = `${speed}s`;
