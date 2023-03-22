@@ -4,8 +4,9 @@
 
     --second-light: #016990;
     --second-dark: #6d0506;
-    --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
-    --main-dark-fond-menu: rgb(109, 5, 6,0.6);
+    --main-color-fond-menu: rgba(1, 105, 144, 0.6);
+    /* fond du menu avec transparence */
+    --main-dark-fond-menu: rgb(109, 5, 6, 0.6);
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -217,9 +218,9 @@ nav {
 /* Header */
 
 .header {
-    margin-top: 15vh;
-    background: no-repeat center/ 100% url("/assets/Wmis2d.gif");
-    height: 20vh;
+    margin-top: 10vh;
+    background: no-repeat center url("/assets/Wmis2d.gif");
+    height: 30vh;
     display: flex;
     flex-direction: column;
 }
@@ -255,47 +256,51 @@ nav {
     /* background-color: var(--second-light); */
     background-color: var(--main-color-fond-menu);
 }
-    
+
 .dark-defile {
-        overflow: hidden;
-        width: 90%;
-        max-width: 90%;
-        margin: auto;
-        /* border: 1px solid red; */
-        border-radius: 0.5em;
-        /* background-color: var(--second-light); */
-        background-color: var(--main-dark-fond-menu);
+    overflow: hidden;
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    /* border: 1px solid red; */
+    border-radius: 0.5em;
+    /* background-color: var(--second-light); */
+    background-color: var(--main-dark-fond-menu);
 }
- 
- /* definir font et vitesse de defilement */
- .defile > div {
-     display: inline-block;
-     white-space: nowrap;
-     animation: defilement 100s infinite linear;
-     cursor: pointer;
-     padding-bottom: 0.6rem ;
-     font-size: 1.6rem;
-     color: var(--main-light);
-     text-shadow: 1px 1px var(--second-dark);
- 
- }
- .auteur{
-     font-style: italic;
- }
- /* Hover: pause du defil (facultatif */
- .defile:hover >div {
-     animation-play-state: paused;
- }
- @keyframes defilement {
-     0%{
-         -webkit-transform: translate(0);
-         transform: translate(0);
-     }
-     100%{
-         -webkit-transform: translate(-100%);
-         transform: translate(-100%);    
-     }
- }
+
+/* definir font et vitesse de defilement */
+.defile>div {
+    display: inline-block;
+    white-space: nowrap;
+    animation: defilement 100s infinite linear;
+    cursor: pointer;
+    padding-bottom: 0.6rem;
+    font-size: 1.6rem;
+    color: var(--main-light);
+    text-shadow: 1px 1px var(--second-dark);
+
+}
+
+.auteur {
+    font-style: italic;
+}
+
+/* Hover: pause du defil (facultatif */
+.defile:hover>div {
+    animation-play-state: paused;
+}
+
+@keyframes defilement {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%);
+        transform: translate(-100%);
+    }
+}
 
 
 /* Main */
@@ -488,7 +493,7 @@ section .evolution {
     padding: 0.5rem;
     text-shadow: black 0 0 0.3rem;
     background-color: var(--second-dark);
-    
+
 }
 
 
@@ -608,9 +613,20 @@ footer {
     }
 
     /* Header */
-.header {
-    margin-top: 10vh;
-}
+    .header {
+
+
+
+        background: no-repeat center / 100% url("/assets/headerdesktop.jpg");
+        height: 40vh;
+
+    }
+
+    .dark-header {
+        background: no-repeat center/ 100% url("/assets/dark-header.jpg");
+
+
+    }
 
 body {
     width: 100%;
@@ -673,6 +689,7 @@ body {
     footer {
 
         box-shadow: 0 0 5rem var(--main-dark);
+        justify-content: center;
     }
 
 }

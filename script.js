@@ -136,6 +136,7 @@ setInterval(() => {
 
 // dark mode
 
+
 const darkMode = document.querySelector('.input-switch');
 const mainTitle = document.querySelector('.main-title');
 const header = document.querySelector('.header');
@@ -170,6 +171,7 @@ function toggleDarkMode() {
   nav.classList.toggle('second-dark');
   footer.classList.toggle('second-dark');
   card.classList.toggle('second-dark-typo');
+  
   for (let i = 0; i < section.length; i++) {
     section[i].classList.toggle("second-dark");
   }
@@ -181,9 +183,11 @@ function toggleDarkMode() {
     rideau.style.backgroundColor = 'rgb(109, 5, 6,0.6)';
     buttonSlower.style.background = 'var(--second-dark)';
     buttonFaster.style.background = 'var(--second-dark)';
+
     for (let i = 0; i < carrouselButton.length; i++) {
-      carrouselButton[i].style.backgroundColor = 'grey';
+      carrouselButton[i].style.backgroundColor = "grey";
     }
+
     mainTitle.textContent = 'Le Roi Borgne';
     titleOne.textContent = 'Aogiri';
     titleTwo.textContent = 'Le Roi';
@@ -203,13 +207,16 @@ function toggleDarkMode() {
       section[i].firstChild.src = `./assets/section-dark-${i + 1}.jpg`;
     }
   } else {
+
     body.style.backgroundColor = 'var(--main-light)';
     rideau.style.backgroundColor = 'var(--main-color-fond-menu)';
     buttonSlower.style.background = 'var(--second-light)';
     buttonFaster.style.background = 'var(--second-light)';
+    
     for (let i = 0; i < carrouselButton.length; i++) {
-      carrouselButton[i].style.backgroundColor = 'grey';
+      carrouselButton[i].style.backgroundColor = "grey";
     }
+
     mainTitle.textContent = 'Kaneki Ken';
     titleOne.textContent = "L'accident";
     titleTwo.textContent = 'La détresse';
@@ -233,6 +240,7 @@ function toggleDarkMode() {
     surnom de Cache-Oeil.`;
     logo.src = './assets/logo-dark1-jour.png'
     lightCarousel()
+
     for (let i = 0; i < slideBorder.length; i++) {
       slideBorder[i].classList.toggle("dark-mode-border");
     }
@@ -252,6 +260,7 @@ const track = document.querySelector(".track");
 
 /* vitesse de base */
 let scrollSpeed = 70;
+let startPosition = 0;
 
 /* plus vite */
 
