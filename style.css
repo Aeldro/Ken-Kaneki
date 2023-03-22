@@ -18,7 +18,7 @@
     margin: 0;
     padding: 0;
     scrollbar-width: none; /* désactive les scrollbars */
-    
+
 }
 
 body {
@@ -223,7 +223,14 @@ header {
 
 }
 
-header h1 {
+.header-dark {
+    margin-top: 15vh;
+    background: no-repeat center/ 100% url("/assets/h");
+    height: 20vh;
+
+}
+
+.main-title {
     color: white;
     font-size: 3rem;
     display: flex;          /* pour disposer h1 et citation..*/
@@ -244,8 +251,8 @@ header h1 {
     border-radius: 0.5em;
     /* background-color: var(--second-light); */
     background-color: var(--main-color-fond-menu);
-    
-    
+
+
  }
  /* definir font et vitesse de defilement */
  .defile > div {
@@ -257,8 +264,8 @@ header h1 {
      font-size: 1.6rem;
      color: var(--main-light);
      text-shadow: 1px 1px var(--second-dark);
- 
- }
+
+}
  .auteur{
      font-style: italic;
  }
@@ -501,21 +508,22 @@ footer {
         background:none; /* pas de fond si le menu est sur la nav*/
         transform: none;
     }
-    
+
     .rideau-toggler {
         display: none;
     }
-    
-    
+
+
     /* .rideau a:hover {
         transform: scale(1.06);
-        
+
         transition: 0.3s;
-        
+
     }
      */
     .liste_menu{
         display: flex;
+        justify-content:space-around;
         align-items: center;
         flex-direction: row;
         
@@ -524,10 +532,19 @@ footer {
         font-weight:lighter;
         font-size: 1.0rem;
         display:flex;
+        color: #f1f1f1;
         text-decoration: none;
         height: 100%;
        
-    } */
+    }
+    nav a:hover{
+        color:#555555;
+        background-color: white;
+        border-radius: 0;
+        border: none;
+        transition: 0.3s;
+    }  
+} */
 
     /* Header */
 
@@ -542,6 +559,6 @@ footer {
 
 
     /* Footer */
-    
-   
+
+
 }
