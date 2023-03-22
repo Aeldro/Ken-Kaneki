@@ -4,10 +4,8 @@
 
     --second-light: #016990;
     --second-dark: #6d0506;
-
     --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
     --main-dark-fond-menu: rgb(109, 5, 6,0.6);
-
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -135,11 +133,11 @@ nav {
 .rideau {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     position: fixed;
     width: 100vw;
-    min-height: 30vh;
+    height: 30vh;
     margin: auto;
     background: var(--main-color-fond-menu);
     transform: translateY(-100%);
@@ -150,7 +148,7 @@ nav {
 }
 
 .rideau.active {
-    transform: translate(0);
+    transform: translateY(0%);
 }
 
 .rideau a {
@@ -322,7 +320,7 @@ main {
     height: 20vh;
     display: flex;
     box-shadow: 0 0 1rem black;
-    margin: 2rem auto 0.5rem auto;
+    margin: 6vh auto 0.5rem auto;
     border-radius: 0.5rem;
 }
 
@@ -372,15 +370,14 @@ li.show-carousel-img {
 }
 
 .container-carousel-buttons {
-    /* border: 1px solid gray; */
     border-radius: 1rem;
     display: flex;
-    gap: 1rem;
+    margin-bottom: 6vh;
 }
 
 .carousel-button {
-    height: 2rem;
-    width: 2rem;
+    height: 1rem;
+    width: 1rem;
     /* background-color: red; */
     margin: 0.5rem;
     border-radius: 50%;
@@ -392,22 +389,21 @@ li.show-carousel-img {
 .active-carousel-button {
     background-color: var(--main-dark);
     box-shadow: 0 0 0.8rem var(--main-dark);
-    opacity: .7;
+    opacity: .6;
 }
 
 /* Section */
 .container-sections {
-
     width: 90%;
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
 }
 
 .individual-section {
     color: white;
     box-shadow: #202020 0 0 0.5rem;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 0 1rem 6vh 1rem;
     border-radius: 1rem;
 }
 
@@ -556,20 +552,28 @@ footer {
         display: none;
     }
 
+    nav {
+        height: 10vh;
+    }
+
     .rideau {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        align-items: end;
-        position: fixed;
-        width: 100%;
+        align-items: center;
+        position: relative;
+        width: 60%;
         height: auto;
-        min-height: 15vh;
+        /* min-height: 15vh; */
         z-index: 0;
         /* border: 1px solid red; */
         background: none;
         /* pas de fond si le menu est sur la nav*/
         transform: none;
+    }
+
+    .rideau a {
+        display: default;
     }
 
     .rideau-toggler {
@@ -600,32 +604,35 @@ footer {
        
     } */
 
+    /* Day night button */
+    .container-switch {
+        margin-right: 5rem;
+    }
+
     /* Header */
-    header {
-
-        background: no-repeat center/ 100% url("/assets/headerdesktop.jpg");
-        height: 50vh;
-    }
-
-    header h1 {
-        color: white;
-        font-size: 7rem;
-        display: flex;
-        /* pour disposer h1 et citation..*/
-        flex-direction: column;
-        /* .. en colonne */
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        text-shadow: 2px 2px 2px black;
-        margin-top: 10rem;
-    }
+header {
+    margin-top: 10vh;
+}
 
     /* Main */
+    main {
+        width: 80%;
+        box-shadow: 0 0 5rem var(--main-dark);
+    }
 
     /* Carousel */
 
     /* Sections */
+    .container-sections {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .individual-section {
+        max-width: 40%;
+        margin: 3vh;
+    }
 
     /* Evolution */
     .cardzer {
@@ -659,12 +666,10 @@ footer {
 
     }
 
-
     /* Footer */
     footer {
-        font-size: 2rem;
-        height: 8vh;
-        justify-content: center;
-        width: 100%;
+
+        box-shadow: 0 0 5rem var(--main-dark);
     }
+
 }
