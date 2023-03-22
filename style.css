@@ -628,6 +628,11 @@ footer {
 
     }
 
+body {
+    width: 100%;
+    background-color: #323131;
+}
+
     /* Main */
     main {
         width: 80%;
