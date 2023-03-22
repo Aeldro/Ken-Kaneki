@@ -431,39 +431,44 @@ li.show-carousel-img {
 
 /*EVOLUTION*/
 
+.card {
+    width: 100%;
+    margin-bottom: 0;
+}
+
 .cardzer {
     color: white;
     text-shadow: black 0 0 0.3rem;
     background-color: var(--second-light);
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     font-size: 2.1rem;
     letter-spacing: 0.2rem;
     margin-top: 5rem;
     padding: 0.5rem;
+    text-align: center;
+    margin-top: 0;
 }
 
 section .evolution {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
 }
 
 .dark-border {
-    height: 35vh;
+    height: 100%;
     width: 22vh;
     border: 5px solid var(--second-light);
 }
 
 .dark-mode-border {
-    height: 35vh;
-    width: 22vh;
     border: 5px solid var(--second-dark);
 }
 
 .slider {
     display: flex;
-    margin: 2rem 0 5rem 0;
+    margin: 0 0 1.5rem 0;
     height: 30vh;
     width: 100%;
     /* a changer pour version bureau*/
@@ -600,7 +605,7 @@ footer {
     /* Header */
     .header {
         margin-top: 10vh;
-        background: no-repeat center/cover url("/assets/headerdesktop.jpg") ;
+        background: no-repeat center/cover url("/assets/headerdesktop.jpg");
         height: 40vh;
     }
 
@@ -636,14 +641,18 @@ footer {
     .individual-section {
         max-width: 40%;
         margin: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .individual-section img {
+        float: none;
     }
 
     /* Evolution */
     .cardzer {
-
-
         font-size: 3rem;
-
         margin-top: 5rem;
     }
 
@@ -676,4 +685,17 @@ footer {
         justify-content: center;
     }
 
+}
+
+@media screen and (max-width: 365px) {
+    .individual-section {
+        margin: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .individual-section img {
+        float: none;
+    }
 }
