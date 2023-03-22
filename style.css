@@ -4,8 +4,10 @@
 
     --second-light: #016990;
     --second-dark: #6d0506;
+
     --main-color-fond-menu: rgba(1,105,144,0.6); /* fond du menu avec transparence */
     --main-dark-fond-menu: rgb(109, 5, 6,0.6);
+
     --main-dark: #202020;
     --main-light: #deecf1;
     /* Mettre white en guise de second light */
@@ -18,8 +20,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scrollbar-width: none; /* désactive les scrollbars */
-    
+    scrollbar-width: none;
+    /* désactive les scrollbars */
+
 }
 
 body {
@@ -27,7 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    
+
 }
 
 .main-light {
@@ -105,7 +108,7 @@ nav {
     height: 0.2rem;
     width: 100%;
     background: white;
-    transition: transform 0.3s ease-out, opacity 0.1s ease-out; 
+    transition: transform 0.3s ease-out, opacity 0.1s ease-out;
 }
 
 /* .l1 {
@@ -204,12 +207,12 @@ nav {
     font-size: 2rem;
 }
 
-.input-switch:checked + .span-switch::before {
+.input-switch:checked+.span-switch::before {
     content: "🌞";
     transform: translateX(3.3rem) rotate(360deg);
 }
 
-.input-switch:checked + .span-switch {
+.input-switch:checked+.span-switch {
     background-color: var(--main-dark);
 }
 
@@ -234,13 +237,16 @@ nav {
 .main-title {
     color: white;
     font-size: 3rem;
-    display: flex;          /* pour disposer h1 et citation..*/
-    flex-direction: column; /* .. en colonne */
+    display: flex;
+    /* pour disposer h1 et citation..*/
+    flex-direction: column;
+    /* .. en colonne */
     justify-content: center;
     align-items: center;
     height: 100%;
     text-shadow: 0 0 2rem black;
 }
+
 /* texte defilant */
 /* container texte defilant */
 .defile {
@@ -294,6 +300,7 @@ nav {
          transform: translate(-100%);    
      }
  }
+
 
 /* Main */
 
@@ -459,19 +466,27 @@ section .evolution {
     width: 22vh;
     border: 5px solid var(--second-dark);
 }
+
 .slider {
     display: flex;
     margin: 2rem 0 5rem 0;
-    height: 37vh;
+    height: 30vh;
     width: 100%;
     /* a changer pour version bureau*/
 }
 
-.slider .slide-track {
-    -webkit-animation: scroll 70s linear infinite;
-    animation: scroll 70s linear infinite;
+.track {
+    -webkit-animation: scroll linear infinite;
+    animation: scroll linear infinite;
+    animation-duration: 70s;
     display: flex;
     max-width: 100%;
+}
+
+
+.track:hover {
+    animation-play-state: paused;
+    cursor: pointer;
 }
 
 .second-dark-typo {
@@ -485,12 +500,36 @@ section .evolution {
 
 @-webkit-keyframes scroll {
     0% {
-        transform: translateX(200rem);
+        transform: translateX(180rem);
     }
 
     100% {
-        transform: translateX(calc(-30rem * 7));
+        transform: translateX(calc(-20rem * 7));
     }
+}
+
+/*boutons + et - */
+
+.button {
+    display: flex;
+    gap: 5rem;
+    margin-top: 0;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+button {
+    background: var(--second-light);
+    border-radius: 15px;
+
+    cursor: pointer;
+    color: white;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-decoration: none;
+
 }
 
 /* Footer */
@@ -501,21 +540,26 @@ footer {
     display: flex;
     align-items: center;
     font-weight: 500;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
 
 }
 
 /* MEDIA QUERY */
-@media screen and (min-width: 720px){
+@media screen and (min-width: 720px) {
 
     /* Nav */
-    .line, .nav-toggler, .nav-toggler .active, .nav-toggler:hover {
+    .line,
+    .nav-toggler,
+    .nav-toggler .active,
+    .nav-toggler:hover {
         display: none;
     }
-      
+
     .rideau {
         display: flex;
         flex-direction: row;
-        justify-content:space-evenly;
+        justify-content: space-evenly;
         align-items: end;
         position: fixed;
         width: 100%;
@@ -523,15 +567,16 @@ footer {
         min-height: 15vh;
         z-index: 0;
         /* border: 1px solid red; */
-        background:none; /* pas de fond si le menu est sur la nav*/
+        background: none;
+        /* pas de fond si le menu est sur la nav*/
         transform: none;
     }
-    
+
     .rideau-toggler {
         display: none;
     }
-    
-    
+
+
     /* .rideau a:hover {
         transform: scale(1.06);
         
@@ -539,12 +584,13 @@ footer {
         
     }
      */
-    .liste_menu{
+    .liste_menu {
         display: flex;
         align-items: center;
         flex-direction: row;
-        
+
     }
+
     /* nav a{
         font-weight:lighter;
         font-size: 1.0rem;
@@ -555,7 +601,25 @@ footer {
     } */
 
     /* Header */
+    header {
 
+        background: no-repeat center/ 100% url("/assets/headerdesktop.jpg");
+        height: 50vh;
+    }
+
+    header h1 {
+        color: white;
+        font-size: 7rem;
+        display: flex;
+        /* pour disposer h1 et citation..*/
+        flex-direction: column;
+        /* .. en colonne */
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-shadow: 2px 2px 2px black;
+        margin-top: 10rem;
+    }
 
     /* Main */
 
@@ -564,9 +628,43 @@ footer {
     /* Sections */
 
     /* Evolution */
+    .cardzer {
+
+
+        font-size: 3rem;
+
+        margin-top: 5rem;
+    }
+
+    /*boutons + et - */
+
+    .button {
+
+        gap: 5rem;
+        margin-bottom: 5rem;
+        margin-top: 3rem;
+    }
+
+    button {
+        background: var(--second-light);
+        border-radius: 15px;
+
+        cursor: pointer;
+        color: white;
+
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 1rem 3rem;
+        text-decoration: none;
+
+    }
 
 
     /* Footer */
-    
-   
+    footer {
+        font-size: 2rem;
+        height: 8vh;
+        justify-content: center;
+        width: 100%;
+    }
 }
