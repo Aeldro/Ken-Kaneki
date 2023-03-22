@@ -227,7 +227,7 @@ nav {
 }
 
 .dark-header {
-    background: center / cover url("/assets/dark-header.jpg") no-repeat;
+    background: no-repeat center/100% url("/assets/dark-header.jpg");
     background-position-y: 30%;
 }
 
@@ -601,7 +601,8 @@ footer {
     }
 
     .dark-header {
-        background: center / cover url("/assets/dark-header.jpg") no-repeat;
+        background: no-repeat center/100% url("/assets/dark-header.jpg");
+        background-position-y: 30%;
     }
 
     body {

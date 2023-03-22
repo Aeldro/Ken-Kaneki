@@ -132,7 +132,7 @@ setInterval(() => {
   } else {
     countDirection = true;
   }
-}, 1000);
+}, 5000);
 
 // dark mode
 
