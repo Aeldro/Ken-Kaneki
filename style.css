@@ -225,7 +225,6 @@ nav {
 }
 
 .dark-header {
-    margin-top: 15vh;
     background: no-repeat center/ 100% url("/assets/dark-header.jpg");
     height: 20vh;
     display: flex;
@@ -249,8 +248,7 @@ nav {
 /* container texte defilant */
 .defile {
     overflow: hidden;
-    width: 90%;
-    max-width: 90%;
+    width: 100%;
     margin: auto;
     /* border: 1px solid red; */
     border-radius: 0.5em;
@@ -610,7 +608,7 @@ footer {
     }
 
     /* Header */
-header {
+.header {
     margin-top: 10vh;
 }
 

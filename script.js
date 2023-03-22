@@ -159,7 +159,6 @@ function toggleDarkMode() {
   nav.classList.toggle('second-dark');
   footer.classList.toggle('second-dark');
   card.classList.toggle('second-dark-typo');
-  rideau.style.backgroundColor = 'rgb(109, 5, 6,0.6';
 
   for (let i = 0; i < section.length; i++) {
     section[i].classList.toggle("second-dark");
@@ -168,7 +167,7 @@ function toggleDarkMode() {
     arrowButton[i].classList.toggle("second-dark");
   }
   if (this.checked) {
-    
+    rideau.style.backgroundColor = 'rgb(109, 5, 6,0.6)';
     for (let i = 0; i < carrouselButton.length; i++) {
       carrouselButton[i].style.backgroundColor = 'grey';
     }
@@ -183,7 +182,7 @@ function toggleDarkMode() {
       section[i].firstChild.src = `./assets/section-dark-${i + 1}.jpg`;
     }
   } else {
-    
+    rideau.style.backgroundColor = 'var(--main-color-fond-menu)';
     for (let i = 0; i < carrouselButton.length; i++) {
       carrouselButton[i].style.backgroundColor = 'grey';
     }
