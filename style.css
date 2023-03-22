@@ -219,7 +219,7 @@ nav {
 
 .header {
     margin-top: 10vh;
-    background: no-repeat center url("/assets/Wmis2d.gif");
+    background: center url("/assets/Wmis2d.gif") no-repeat;
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -227,7 +227,7 @@ nav {
 }
 
 .dark-header {
-    background: no-repeat center/ 100% url("/assets/dark-header.jpg");
+    background: center / cover url("/assets/dark-header.jpg") no-repeat;
     background-position-y: 30%;
 }
 
@@ -257,13 +257,6 @@ nav {
 }
 
 .dark-defile {
-    overflow: hidden;
-    width: 90%;
-    max-width: 90%;
-    margin: auto;
-    /* border: 1px solid red; */
-    border-radius: 0.5em;
-    /* background-color: var(--second-light); */
     background-color: var(--main-dark-fond-menu);
 }
 
@@ -478,6 +471,7 @@ section .evolution {
     -webkit-animation: scroll linear infinite;
     animation: scroll linear infinite;
     animation-duration: 70s;
+    animation-delay: 0.5s;
     display: flex;
     max-width: 100%;
 }
@@ -529,6 +523,11 @@ button {
     padding: 1rem;
     text-decoration: none;
 
+}
+
+button:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
 }
 
 /* Footer */
@@ -596,20 +595,23 @@ footer {
 
     /* Header */
     .header {
-
         margin-top: 10vh;
-        background: no-repeat center / 100% url("/assets/headerdesktop.jpg");
+        background: center / cover url("/assets/headerdesktop.jpg") no-repeat;
         height: 40vh;
     }
 
     .dark-header {
-        background: no-repeat / 100% url("/assets/dark-header.jpg");
+        background: center / cover url("/assets/dark-header.jpg") no-repeat;
     }
 
-body {
-    width: 100%;
-    background-color: #323131;
-}
+    body {
+        width: 100%;
+        background-color: #323131;
+    }
+
+    .main-title {
+        font-size: 6rem;
+    }
 
     /* Main */
     main {
