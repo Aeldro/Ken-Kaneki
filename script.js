@@ -157,6 +157,10 @@ const titleOne = document.querySelector('.title-1');
 const titleTwo = document.querySelector('.title-2');
 const titleThree = document.querySelector('.title-3');
 const titleFour = document.querySelector('.title-4');
+const linkOne = document.querySelector('.link-1');
+const linkTwo = document.querySelector('.link-2');
+const linkThree = document.querySelector('.link-3');
+const linkFour = document.querySelector('.link-4');
 const paragraphOne = document.querySelector('.p-1');
 const paragraphTwo = document.querySelector('.p-2');
 const paragraphThree = document.querySelector('.p-3');
@@ -193,6 +197,10 @@ function toggleDarkMode() {
     titleTwo.textContent = 'Le Roi';
     titleThree.textContent = 'La torture';
     titleFour.textContent = 'Scolopendre';
+    linkOne.textContent = 'Aogiri';
+    linkTwo.textContent = 'Le Roi';
+    linkThree.textContent = 'La torture';
+    linkFour.textContent = 'Scolopendre';
     paragraphOne.textContent = `Kaneki rejoint l'organisation de l'Arbre Aogiri qui était une organisation de Goules fondée dans le but de "créer un monde qui soit bon avec les Goules". L’organisation avait donc comme mission de détruire le CCG et l’Organisation V qui se cachait derrière, afin de pouvoir espérer atteindre ce but.`;
     paragraphTwo.textContent = `Lorsque Kaneki a clairement indiqué qu’il ne tuerait jamais Arima, Hishio s’est suicidé, expliquant qu’il était en train de mourir d’un vieillissement accéléré et qu’il avait besoin d’un successeur pour prendre le manteau du Roi borgne pour le bien des goules et de l’humanité en général. C’est ainsi que Kaneki a été contraint d’adopter le titre de roi borgne et de succéder à Arima. Par conséquent, la véritable identité du Roi borgne n’était pas Eto Yoshimura mais plutôt Hishio Arima. À la mort d’Arima, le titre a été transmis à Kaneki.`;
     paragraphThree.textContent = `Après avoir été capturé par Jason, Kaneki est devenu l'une de ces victimes. Jason a fait compter Kaneki de mille en sept pendant qu'il était torturé. Cela permettait de garder l'esprit de Kaneki concentré et de s'assurer qu'il ne perdait pas conscience à cause de la douleur. Pendant que Kaneki était torturé, l'ordre de Jason était répété jusqu'à ce qu'il prenne la forme d'un mantra.`;
@@ -222,6 +230,10 @@ function toggleDarkMode() {
     titleTwo.textContent = 'La détresse';
     titleThree.textContent = "L'université";
     titleFour.textContent = "L'Antique";
+    linkOne.textContent = "L'accident";
+    linkTwo.textContent = 'La détresse';
+    linkThree.textContent =  "L'université";
+    linkFour.textContent = "L'Antique";
     paragraphOne.textContent = `Autrefois simple humain, Ken Kaneki vivait une vie relativement normale.
     Cependant, suite à un accident les choses changent rapidement après que le docteur Akihiro Kano lui
     ait transplanté les Cellules RC de Lize Kamishiro une goule mangeuse d'homme, le transformant ainsi
