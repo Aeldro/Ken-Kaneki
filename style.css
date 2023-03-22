@@ -53,6 +53,7 @@ body {
 nav {
     position: fixed;
     height: 15vh;
+    min-height: 4rem;
     width: 100vw;
     z-index: 1;
     display: flex;
@@ -219,7 +220,7 @@ nav {
 
 .header {
     margin-top: 10vh;
-    background: center url("/assets/Wmis2d.gif") no-repeat;
+    background: no-repeat center/cover url("/assets/Wmis2d.gif");
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -227,7 +228,7 @@ nav {
 }
 
 .dark-header {
-    background: no-repeat center/100% url("/assets/dark-header.jpg");
+    background: no-repeat center/cover url("/assets/dark-header.jpg");
     background-position-y: 30%;
 }
 
@@ -536,6 +537,7 @@ footer {
     color: white;
     padding-left: 1rem;
     height: 5vh;
+    min-height: 3rem;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -570,6 +572,7 @@ footer {
         min-height: auto;
         z-index: 0;
         background: none;
+        background-color: none;
         /* pas de fond si le menu est sur la nav*/
         transform: none;
     }
@@ -597,12 +600,12 @@ footer {
     /* Header */
     .header {
         margin-top: 10vh;
-        background: center / cover url("/assets/headerdesktop.jpg") no-repeat;
+        background: no-repeat center/cover url("/assets/headerdesktop.jpg") ;
         height: 40vh;
     }
 
     .dark-header {
-        background: no-repeat center/100% url("/assets/dark-header.jpg");
+        background: no-repeat center/cover url("/assets/dark-header.jpg");
         background-position-y: 30%;
     }
 
