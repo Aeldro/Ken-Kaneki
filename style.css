@@ -311,7 +311,8 @@ main {
 /* Carousel */
 
 .carousel-container {
-    width: 70%;
+    width: 80%;
+    max-width: 40rem;
     height: 20vh;
     min-height: 15rem;
     display: flex;
