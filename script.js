@@ -136,29 +136,28 @@ setInterval(() => {
 
 // dark mode
 
-const darkMode = document.querySelector('.input-switch');
-const mainTitle = document.querySelector('.main-title');
-const header = document.querySelector('.header');
-const defile = document.querySelector('.defile');
-const carrouselButton = document.querySelectorAll('.carousel-button');
-const rideau = document.querySelector('.rideau');
-const main = document.querySelector('main');
-const nav = document.querySelector('nav');
-const footer = document.querySelector('footer');
-const section = document.querySelectorAll('.individual-section');
-const logo = document.querySelector('.image');
-const card = document.querySelector('.cardzer');
-const arrowButton = document.querySelectorAll('.arrow-button');
-const slideBorder = document.querySelectorAll('.dark-border');
+const darkMode = document.querySelector(".input-switch");
+const mainTitle = document.querySelector(".main-title");
+const header = document.querySelector(".header");
+const defile = document.querySelector(".defile");
+const carrouselButton = document.querySelectorAll(".carousel-button");
+const rideau = document.querySelector(".rideau");
+const main = document.querySelector("main");
+const nav = document.querySelector("nav");
+const footer = document.querySelector("footer");
+const section = document.querySelectorAll(".individual-section");
+const logo = document.querySelector(".image");
+const card = document.querySelector(".cardzer");
+const arrowButton = document.querySelectorAll(".arrow-button");
+const slideBorder = document.querySelectorAll(".dark-border");
 
 function toggleDarkMode() {
-
-  main.classList.toggle('main-dark');
-  header.classList.toggle('dark-header');
-  defile.classList.toggle('dark-defile');
-  nav.classList.toggle('second-dark');
-  footer.classList.toggle('second-dark');
-  card.classList.toggle('second-dark-typo');
+  main.classList.toggle("main-dark");
+  header.classList.toggle("dark-header");
+  defile.classList.toggle("dark-defile");
+  nav.classList.toggle("second-dark");
+  footer.classList.toggle("second-dark");
+  card.classList.toggle("second-dark-typo");
 
   for (let i = 0; i < section.length; i++) {
     section[i].classList.toggle("second-dark");
@@ -167,13 +166,13 @@ function toggleDarkMode() {
     arrowButton[i].classList.toggle("second-dark");
   }
   if (this.checked) {
-    rideau.style.backgroundColor = 'rgb(109, 5, 6,0.6)';
+    rideau.style.backgroundColor = "rgb(109, 5, 6,0.6)";
     for (let i = 0; i < carrouselButton.length; i++) {
-      carrouselButton[i].style.backgroundColor = 'grey';
+      carrouselButton[i].style.backgroundColor = "grey";
     }
-    mainTitle.innerHTML = 'Le roi Borgne';
-    logo.src = './assets/logo-dark1-nuit.png'
-    darkCarousel()
+    mainTitle.innerHTML = "Le roi Borgne";
+    logo.src = "./assets/logo-dark1-nuit.png";
+    darkCarousel();
 
     for (let i = 0; i < slideBorder.length; i++) {
       slideBorder[i].classList.toggle("dark-mode-border");
@@ -182,13 +181,13 @@ function toggleDarkMode() {
       section[i].firstChild.src = `./assets/section-dark-${i + 1}.jpg`;
     }
   } else {
-    rideau.style.backgroundColor = 'var(--main-color-fond-menu)';
+    rideau.style.backgroundColor = "var(--main-color-fond-menu)";
     for (let i = 0; i < carrouselButton.length; i++) {
-      carrouselButton[i].style.backgroundColor = 'grey';
+      carrouselButton[i].style.backgroundColor = "grey";
     }
-    mainTitle.innerHTML = 'Kaneki Ken';
-    logo.src = './assets/logo-dark1-jour.png'
-    lightCarousel()
+    mainTitle.innerHTML = "Kaneki Ken";
+    logo.src = "./assets/logo-dark1-jour.png";
+    lightCarousel();
     for (let i = 0; i < slideBorder.length; i++) {
       slideBorder[i].classList.toggle("dark-mode-border");
     }
@@ -208,6 +207,7 @@ const track = document.querySelector(".track");
 
 /* vitesse de base */
 let scrollSpeed = 70;
+let startPosition = 0;
 
 /* plus vite */
 
