@@ -131,8 +131,6 @@ setInterval(() => {
 
 // dark mode
 const darkMode = document.querySelector('.input-switch');
-const mainTitle = document.querySelector('.main-title');
-const headerDark = document.querySelector('header');
 const main = document.querySelector('main');
 const nav = document.querySelector('nav');
 const footer = document.querySelector('footer');
@@ -144,7 +142,6 @@ const slideBorder = document.querySelectorAll('.dark-border');
 
 function toggleDarkMode() {
 
-  mainTitle.classList.toggle('main-title');
   main.classList.toggle('main-dark');
   nav.classList.toggle('second-dark');
   footer.classList.toggle('second-dark');
@@ -156,24 +153,15 @@ function toggleDarkMode() {
     arrowButton[i].classList.toggle('second-dark');
   }
   if (this.checked) {
-
-    mainTitle.innerHTML = "Le Roi Borgne";
-    headerDark.src = './assets/header-dark.jpg'
     logo.src = './assets/logo-dark1-nuit.png'
-
     darkCarousel()
-
     for (let i = 0; i < slideBorder.length; i++) {
       slideBorder[i].classList.toggle('dark-mode-border');
     }
-
     for (let i = 0; i < section.length; i++) {
       section[i].firstChild.src = `./assets/section-dark-${i + 1}.jpg`
     }
-
   } else {
-    mainTitle.innerHTML = "Kaneki Ken";
-    headerDark.src = './assets/Wmis2d.gif'
     logo.src = './assets/logo-dark1-jour.png'
     lightCarousel()
     for (let i = 0; i < slideBorder.length; i++) {
